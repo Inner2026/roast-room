@@ -3,7 +3,7 @@
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [6 0 R 8 0 R] /Count 2 >>
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R] /Count 5 >>
 endobj
 3 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
@@ -12,91 +12,287 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
 endobj
 5 0 obj
-<< /Length 3513 >>
+<< /Length 6004 >>
 stream
-BT /F2 9 Tf 0.91 0.4 0.29 rg 52 777.74 Td (THE ROAST ROOM) Tj ET
-BT /F2 24 Tf 0.1 0.1 0.12 rg 52 743.34 Td (Council verdict) Tj ET
-BT /F1 12 Tf 0.1 0.1 0.12 rg 52 719.14 Td (I run a coaching business at $30k a month with 15 clients at $2,000 each. Should I raise) Tj ET
-BT /F1 12 Tf 0.1 0.1 0.12 rg 52 702.94 Td (to $3,500 for everyone, raise for new clients only, or keep $2,000?) Tj ET
-BT /F1 8.5 Tf 0.5 0.5 0.55 rg 52 685.46 Td (Session demo-pricing) Tj ET
-0.85 0.85 0.88 RG 0.6 w 52 677.46 m 543.28 677.46 l S
-BT /F2 9 Tf 0.91 0.4 0.29 rg 52 659.31 Td (VERDICT) Tj ET
-BT /F2 18 Tf 0.1 0.1 0.12 rg 52 633.01 Td (Raise new clients only) Tj ET
-BT /F1 10 Tf 0.4 0.4 0.45 rg 52 617.51 Td (Confidence 74%) Tj ET
-BT /F1 11 Tf 0.1 0.1 0.12 rg 52 594.66 Td (Test the $3,500 price on new clients first and grandfather the existing 15 for a defined period. You) Tj ET
-BT /F1 11 Tf 0.1 0.1 0.12 rg 52 579.81 Td (learn real price resistance without risking the base.) Tj ET
-BT /F2 9 Tf 0.91 0.4 0.29 rg 52 559.66 Td (SCOREBOARD) Tj ET
-BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 541.66 Td (Raise new clients only) Tj ET
-0.92 0.92 0.94 rg 252 540.66 220 9 re f
-0.91 0.4 0.29 rg 252 540.66 176.00 9 re f
-BT /F2 9.5 Tf 0.1 0.1 0.12 rg 480 541.66 Td (8.0) Tj ET
-BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 523.66 Td (Raise all to $3,500) Tj ET
-0.92 0.92 0.94 rg 252 522.66 220 9 re f
-0.91 0.4 0.29 rg 252 522.66 136.40 9 re f
-BT /F2 9.5 Tf 0.1 0.1 0.12 rg 480 523.66 Td (6.2) Tj ET
-BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 505.66 Td (Keep $2,000) Tj ET
-0.92 0.92 0.94 rg 252 504.66 220 9 re f
-0.91 0.4 0.29 rg 252 504.66 99.00 9 re f
-BT /F2 9.5 Tf 0.1 0.1 0.12 rg 480 505.66 Td (4.5) Tj ET
-BT /F2 9 Tf 0.91 0.4 0.29 rg 52 481.51 Td (TOP RISKS) Tj ET
-BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 464.34 Td (1. New-client close rate may drop at $3,500) Tj ET
-BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 446.16 Td (2. Existing clients may notice and ask for the new rate) Tj ET
-BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 427.99 Td (3. You may be tempted to rise for everyone before you have data) Tj ET
-BT /F2 9 Tf 0.91 0.4 0.29 rg 52 407.84 Td (NEXT STEPS) Tj ET
-BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 390.66 Td (1. Publish the $3,500 offer to new leads this week) Tj ET
-BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 372.49 Td (2. Track close rate on the next 10 calls) Tj ET
-BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 354.31 Td (3. Decide on a migration plan for existing clients at day 60) Tj ET
-0.85 0.85 0.88 RG 0.6 w 52 342.31 m 543.28 342.31 l S
-BT /F2 9 Tf 0.91 0.4 0.29 rg 52 324.16 Td (HOW EACH SEAT SCORED) Tj ET
-BT /F2 10.5 Tf 0.1 0.1 0.12 rg 52 305.99 Td (The Capital Allocator \(weight 4\)) Tj ET
-BT /F1 9.5 Tf 0.35 0.35 0.4 rg 52 292.16 Td (Raise all to $3,500: 6 | Raise new clients only: 8 | Keep $2,000: 5) Tj ET
-BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 278.34 Td (Staged rise limits downside while testing demand.) Tj ET
-BT /F2 10.5 Tf 0.1 0.1 0.12 rg 52 258.16 Td (The Offer Architect \(weight 5\)) Tj ET
-BT /F1 9.5 Tf 0.35 0.35 0.4 rg 52 244.34 Td (Raise all to $3,500: 8 | Raise new clients only: 8 | Keep $2,000: 3) Tj ET
-BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 230.51 Td (Underpriced; either rise beats staying put.) Tj ET
-BT /F2 10.5 Tf 0.1 0.1 0.12 rg 52 210.34 Td (The Customer Advocate \(weight 4\)) Tj ET
-BT /F1 9.5 Tf 0.35 0.35 0.4 rg 52 196.51 Td (Raise all to $3,500: 4 | Raise new clients only: 8 | Keep $2,000: 6) Tj ET
-BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 182.69 Td (A surprise 75% rise damages trust with loyal clients.) Tj ET
-BT /F1 8 Tf 0.5 0.5 0.55 rg 52 28 Td (Roast Room  |  page 1 of 2) Tj ET
+BT /F2 9 Tf 0.91 0.4 0.29 rg 52 777.74 Td (THE ROAST ROOM | EXECUTIVE BOARD REPORT) Tj ET
+BT /F2 24 Tf 0.1 0.1 0.12 rg 52 743.34 Td (Board verdict) Tj ET
+BT /F1 12 Tf 0.1 0.1 0.12 rg 52 719.14 Td (ILLUSTRATIVE EXAMPLE: A founder wants to invest $10,000 in a private-label) Tj ET
+BT /F1 12 Tf 0.1 0.1 0.12 rg 52 702.94 Td (accessories brand made by a manufacturer in Thailand and sold internationally.) Tj ET
+BT /F1 8.5 Tf 0.5 0.5 0.55 rg 52 687.46 Td (Session example-thailand-accessories | Mode: startup) Tj ET
+0.85 0.85 0.88 RG 0.6 w 52 679.46 m 543.28 679.46 l S
+BT /F2 9 Tf 0.91 0.4 0.29 rg 52 655.31 Td (EXECUTIVE SUMMARY) Tj ET
+BT /F2 18 Tf 0.1 0.1 0.12 rg 52 628.01 Td (Postpone) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 52 611.84 Td (Weighted overall score 5.1/10) Tj ET
+BT /F1 10 Tf 0.4 0.4 0.45 rg 52 596.34 Td (Board confidence 54% \(subjective, not a calibrated probability\)) Tj ET
+BT /F1 11 Tf 0.1 0.1 0.12 rg 52 575.49 Td (The model works on the founder inputs, but demand, unit cost and trademark protection are) Tj ET
+BT /F1 11 Tf 0.1 0.1 0.12 rg 52 560.64 Td (untested while all of the capital is exposed. Test demand with a pre-sale before the first production) Tj ET
+BT /F1 11 Tf 0.1 0.1 0.12 rg 52 545.79 Td (run.) Tj ET
+BT /F2 9 Tf 0.91 0.4 0.29 rg 52 519.64 Td (BUSINESS PROPOSAL) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 52 502.46 Td (ILLUSTRATIVE EXAMPLE: A founder wants to invest $10,000 in a private-label accessories brand) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 52 488.29 Td (made by a manufacturer in Thailand and sold internationally.) Tj ET
+BT /F1 10 Tf 0.4 0.4 0.45 rg 52 472.79 Td (Options considered: Launch now with $10,000 | Pre-sell a first batch, then decide | Do nothing) Tj ET
+0.85 0.85 0.88 RG 0.6 w 52 462.79 m 543.28 462.79 l S
+BT /F2 9 Tf 0.91 0.4 0.29 rg 52 438.64 Td (RESEARCH FINDINGS) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 52 421.46 Td (Illustrative placeholder. No live research was run for this example, so no market statistic is claimed. In) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 52 407.29 Td (a real session the Research Agent fills this with cited, dated findings.) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 58 388.46 Td ([UNAVAILABLE] Unit cost, MOQ and lead time were not researched in this example) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 58 375.64 Td ([ASSUMPTION] Selling price of $20 and 400 units a month are the founder inputs used in the model) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 58 362.81 Td ([UNAVAILABLE] Competitor pricing was not researched in this example) Tj ET
+BT /F2 10 Tf 0.1 0.1 0.12 rg 52 349.31 Td (Information not found:) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 334.14 Td (1. Competitor prices) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 315.96 Td (2. Manufacturer MOQ and lead time) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 297.79 Td (3. Import duties by destination) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 279.61 Td (4. Trademark status in target markets) Tj ET
+0.85 0.85 0.88 RG 0.6 w 52 271.61 m 543.28 271.61 l S
+BT /F2 9 Tf 0.91 0.4 0.29 rg 52 247.46 Td (FINANCIAL ANALYSIS) Tj ET
+BT /F2 9.5 Tf 0.1 0.1 0.12 rg 52 231.46 Td (Metric) Tj ET
+BT /F2 9.5 Tf 0.1 0.1 0.12 rg 227 231.46 Td (Optimistic) Tj ET
+BT /F2 9.5 Tf 0.1 0.1 0.12 rg 327 231.46 Td (Expected) Tj ET
+BT /F2 9.5 Tf 0.1 0.1 0.12 rg 427 231.46 Td (Pessimistic) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 216.46 Td (Gross revenue) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 227 216.46 Td (120,000) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 327 216.46 Td (96,000) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 427 216.46 Td (57,600) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 201.46 Td (Cost of goods sold) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 227 201.46 Td (43,200) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 327 201.46 Td (38,400) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 427 201.46 Td (27,648) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 186.46 Td (Gross profit) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 227 186.46 Td (76,800) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 327 186.46 Td (57,600) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 427 186.46 Td (29,952) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 171.46 Td (Operating profit) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 227 171.46 Td (49,200) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 327 171.46 Td (30,720) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 427 171.46 Td (3,624) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 156.46 Td (Net profit) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 227 156.46 Td (49,200) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 327 156.46 Td (30,720) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 427 156.46 Td (3,624) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 141.46 Td (Gross margin) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 227 141.46 Td (64%) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 327 141.46 Td (60%) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 427 141.46 Td (52%) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 126.46 Td (Net margin) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 227 126.46 Td (41%) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 327 126.46 Td (32%) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 427 126.46 Td (6.29%) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 111.46 Td (ROI over horizon) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 227 111.46 Td (392%) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 327 111.46 Td (207.2%) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 427 111.46 Td (-63.76%) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 96.46 Td (Break-even units / month) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 227 96.46 Td (164) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 327 96.46 Td (175) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 427 96.46 Td (209) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 81.46 Td (Capital recovered) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 227 81.46 Td (month 3) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 327 81.46 Td (month 4) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 427 81.46 Td (never) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 66.46 Td (Peak funding need) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 227 66.46 Td (10,000) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 327 66.46 Td (10,000) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 427 66.46 Td (10,000) Tj ET
+BT /F1 8 Tf 0.5 0.5 0.55 rg 52 28 Td (Roast Room  |  page 1 of 5) Tj ET
 endstream
 endobj
 6 0 obj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
 endobj
 7 0 obj
-<< /Length 1334 >>
+<< /Length 5213 >>
 stream
-BT /F2 9 Tf 0.91 0.4 0.29 rg 52 777.74 Td (FULL TRANSCRIPT) Tj ET
-BT /F2 12 Tf 0.1 0.1 0.12 rg 52 751.54 Td (Round 1: Opening positions) Tj ET
-BT /F2 10 Tf 0.1 0.1 0.12 rg 52 734.04 Td (The Capital Allocator) Tj ET
-BT /F1 10 Tf 0.1 0.1 0.12 rg 60 719.54 Td (Cash first. Raising all 15 clients to $3,500 lifts revenue to $52,500 if nobody leaves. Losing 5 clients puts) Tj ET
-BT /F1 10 Tf 0.1 0.1 0.12 rg 60 706.04 Td (you at $35,000, still above today. The downside is survivable, but a blanket rise bets your whole base on) Tj ET
-BT /F1 10 Tf 0.1 0.1 0.12 rg 60 692.54 Td (one assumption.) Tj ET
-BT /F2 10 Tf 0.1 0.1 0.12 rg 52 673.04 Td (The Offer Architect) Tj ET
-BT /F1 10 Tf 0.1 0.1 0.12 rg 60 658.54 Td (At $2,000 you are underpriced if you have a waitlist or fast results. Raise, but attach a better offer: a) Tj ET
-BT /F1 10 Tf 0.1 0.1 0.12 rg 60 645.04 Td (guarantee or a premium tier, so the rise reads as upgrade, not tax.) Tj ET
-BT /F2 10 Tf 0.1 0.1 0.12 rg 52 625.54 Td (The Contrarian) Tj ET
-BT /F1 10 Tf 0.1 0.1 0.12 rg 60 611.04 Td (You said you lean toward raising because you feel underpaid. That is a feeling, not evidence. What do your) Tj ET
-BT /F1 10 Tf 0.1 0.1 0.12 rg 60 597.54 Td (last five sales calls say about price resistance?) Tj ET
-BT /F1 8 Tf 0.5 0.5 0.55 rg 52 28 Td (Roast Room  |  page 2 of 2) Tj ET
+BT /F1 9 Tf 0.4 0.4 0.45 rg 52 777.74 Td (Horizon 12 months. Amounts in the user's currency.) Tj ET
+BT /F2 10 Tf 0.1 0.1 0.12 rg 52 761.24 Td (Financial assumptions) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 746.07 Td (1. All optional inputs were supplied by the user.) Tj ET
+BT /F1 9 Tf 0.4 0.4 0.45 rg 52 729.92 Td (Optimistic and pessimistic scenarios use default stress multipliers that are assumptions, not research findings.) Tj ET
+BT /F2 10 Tf 0.1 0.1 0.12 rg 52 713.42 Td (Model limitations) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 698.24 Td (1. No working-capital or inventory-timing model: stock bought before sales is not modelled, so early) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 684.07 Td (cash need is understated for product businesses.) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 665.89 Td (2. Tax is applied to positive monthly operating profit only; losses are not carried forward.) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 647.72 Td (3. Units grow at a constant monthly rate; no seasonality, no churn, no price changes over time.) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 629.54 Td (4. Currency conversion, shipping, duties and returns must already be inside the unit cost or fixed) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 615.37 Td (costs.) Tj ET
+0.85 0.85 0.88 RG 0.6 w 52 607.37 m 543.28 607.37 l S
+BT /F2 9 Tf 0.91 0.4 0.29 rg 52 583.22 Td (SCOREBOARD AND CRITERIA) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 566.22 Td (Financial viability \(w25\)) Tj ET
+0.92 0.92 0.94 rg 287 565.22 190 9 re f
+0.91 0.4 0.29 rg 287 565.22 106.40 9 re f
+BT /F2 9.5 Tf 0.1 0.1 0.12 rg 485 566.22 Td (5.6) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 548.22 Td (Market attractiveness \(w25\)) Tj ET
+0.92 0.92 0.94 rg 287 547.22 190 9 re f
+0.91 0.4 0.29 rg 287 547.22 95.00 9 re f
+BT /F2 9.5 Tf 0.1 0.1 0.12 rg 485 548.22 Td (5.0) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 530.22 Td (Operational feasibility \(w15\)) Tj ET
+0.92 0.92 0.94 rg 287 529.22 190 9 re f
+0.91 0.4 0.29 rg 287 529.22 104.50 9 re f
+BT /F2 9.5 Tf 0.1 0.1 0.12 rg 485 530.22 Td (5.5) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 512.22 Td (Risk exposure \(10 = low risk\) \(w20\)) Tj ET
+0.92 0.92 0.94 rg 287 511.22 190 9 re f
+0.91 0.4 0.29 rg 287 511.22 83.60 9 re f
+BT /F2 9.5 Tf 0.1 0.1 0.12 rg 485 512.22 Td (4.4) Tj ET
+BT /F1 9.5 Tf 0.4 0.4 0.45 rg 52 495.39 Td (Strategic fit: not assessed) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 479.39 Td (Legal and compliance \(w10\)) Tj ET
+0.92 0.92 0.94 rg 287 478.39 190 9 re f
+0.91 0.4 0.29 rg 287 478.39 95.00 9 re f
+BT /F2 9.5 Tf 0.1 0.1 0.12 rg 485 479.39 Td (5.0) Tj ET
+BT /F2 10 Tf 0.1 0.1 0.12 rg 52 457.89 Td (Option ranking) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 442.89 Td (Pre-sell a first batch, then decide) Tj ET
+0.92 0.92 0.94 rg 287 441.89 190 9 re f
+0.91 0.4 0.29 rg 287 441.89 136.80 9 re f
+BT /F2 9.5 Tf 0.1 0.1 0.12 rg 485 442.89 Td (7.2) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 424.89 Td (Launch now with $10,000) Tj ET
+0.92 0.92 0.94 rg 287 423.89 190 9 re f
+0.91 0.4 0.29 rg 287 423.89 79.80 9 re f
+BT /F2 9.5 Tf 0.1 0.1 0.12 rg 485 424.89 Td (4.2) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 406.89 Td (Do nothing) Tj ET
+0.92 0.92 0.94 rg 287 405.89 190 9 re f
+0.91 0.4 0.29 rg 287 405.89 79.80 9 re f
+BT /F2 9.5 Tf 0.1 0.1 0.12 rg 485 406.89 Td (4.2) Tj ET
+BT /F2 9 Tf 0.91 0.4 0.29 rg 52 384.74 Td (HOW THE BOARD REACHED ITS CONCLUSION) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 367.57 Td (1. Weighted overall 5.1/10 across 5 of 6 criteria \(95% of weight assessed\); not assessed: Strategic) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 353.39 Td (fit.) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 335.22 Td (2. Financial viability: 5.6/10 at weight 25 \(seats: fin, procure\).) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 317.04 Td (3. Market attractiveness: 5/10 at weight 25 \(seats: market, trade\).) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 298.87 Td (4. Operational feasibility: 5.5/10 at weight 15 \(seats: trade, procure\).) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 280.69 Td (5. Risk exposure \(10 = low risk\): 4.4/10 at weight 20 \(seats: legal, riskmgr\).) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 262.52 Td (6. Legal and compliance: 5/10 at weight 10 \(seats: legal\).) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 244.34 Td (7. Score 5.1 maps to "Postpone" using thresholds proceed>=7, conditional>=5.5, postpone>=4.) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 226.17 Td (8. No caps applied.) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 207.99 Td (9. Board confidence 54% \(subjective; see factors\).) Tj ET
+BT /F2 9 Tf 0.91 0.4 0.29 rg 52 185.84 Td (MAIN COMPETITIVE ADVANTAGES) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 168.67 Td (1. Healthy gross margin on the stated inputs \(60%\)) Tj ET
+BT /F2 9 Tf 0.91 0.4 0.29 rg 52 146.52 Td (CRITICAL WEAKNESSES) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 129.34 Td (1. No evidence of demand) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 111.17 Td (2. Unit cost is an input, not a quotation) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 92.99 Td (3. No working-capital model) Tj ET
+BT /F2 9 Tf 0.91 0.4 0.29 rg 52 70.84 Td (TOP RISKS) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 53.67 Td (1. Failed first batch) Tj ET
+BT /F1 8 Tf 0.5 0.5 0.55 rg 52 28 Td (Roast Room  |  page 2 of 5) Tj ET
 endstream
 endobj
 8 0 obj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
 endobj
+9 0 obj
+<< /Length 4033 >>
+stream
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 775.72 Td (2. Trademark conflict) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 757.54 Td (3. Freight and duty costs above plan) Tj ET
+BT /F2 9 Tf 0.91 0.4 0.29 rg 52 735.39 Td (MAIN DISAGREEMENTS BETWEEN ADVISORS) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 718.22 Td (1. Financial Department sees payback inside the year; Risk Management sees the whole capital) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 704.04 Td (exposed to one batch) Tj ET
+0.85 0.85 0.88 RG 0.6 w 52 696.04 m 543.28 696.04 l S
+BT /F2 9 Tf 0.91 0.4 0.29 rg 52 671.89 Td (DEVIL'S ADVOCATE) Tj ET
+BT /F2 10.5 Tf 0.75 0.2 0.2 rg 52 654.72 Td (Formal objection \(blocking\)) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 52 639.54 Td (Demand, unit cost and trademark ownership are all unproven, and the whole $10,000 is committed) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 52 625.37 Td (before any of them is tested. A single failed batch ends the venture.) Tj ET
+BT /F2 9.5 Tf 0.1 0.1 0.12 rg 52 609.54 Td (To withdraw this objection:) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 594.37 Td (1. Obtain at least 3 written manufacturer quotations) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 576.19 Td (2. Pre-sell or waitlist at least 50 units before the first production run) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 558.02 Td (3. Register the brand in the first target market) Tj ET
+BT /F2 9.5 Tf 0.1 0.1 0.12 rg 52 541.19 Td (Alternatives suggested:) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 526.02 Td (1. Order a small sample batch first) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 507.84 Td (2. Sell through one marketplace before building a store) Tj ET
+BT /F2 10 Tf 0.1 0.1 0.12 rg 52 490.34 Td (Alternative strategies) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 475.17 Td (1. Sample batch first) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 456.99 Td (2. One marketplace before a store) Tj ET
+0.85 0.85 0.88 RG 0.6 w 52 448.99 m 543.28 448.99 l S
+BT /F2 9 Tf 0.91 0.4 0.29 rg 52 424.84 Td (REQUIRED CONDITIONS BEFORE IMPLEMENTATION) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 407.67 Td (1. Obtain at least 3 written manufacturer quotations) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 389.49 Td (2. Pre-sell or waitlist at least 50 units before the first production run) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 371.32 Td (3. Register the brand in the first target market) Tj ET
+BT /F2 9 Tf 0.91 0.4 0.29 rg 52 349.17 Td (NEXT STEPS) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 331.99 Td (1. Request 3 RFQs this week) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 313.82 Td (2. Open a waitlist and target 50 pre-orders) Tj ET
+BT /F1 10.5 Tf 0.1 0.1 0.12 rg 58 295.64 Td (3. File the trademark in the first market) Tj ET
+0.85 0.85 0.88 RG 0.6 w 52 287.64 m 543.28 287.64 l S
+BT /F2 9 Tf 0.91 0.4 0.29 rg 52 263.49 Td (WHAT-IF SCENARIOS) Tj ET
+BT /F2 10.5 Tf 0.1 0.1 0.12 rg 52 246.32 Td (Sales 40% lower) Tj ET
+BT /F1 9 Tf 0.4 0.4 0.45 rg 52 233.17 Td (unitsPerMonth: 400 to 240) Tj ET
+BT /F1 10 Tf 0.1 0.1 0.12 rg 52 218.67 Td (Expected net profit 30,720 to 8,832. Recommendation: Postpone \(5.1\) to Postpone \(4.7\).) Tj ET
+0.85 0.85 0.88 RG 0.6 w 52 209.67 m 543.28 209.67 l S
+BT /F2 9 Tf 0.91 0.4 0.29 rg 52 185.52 Td (ADVISOR EVALUATIONS) Tj ET
+BT /F2 10.5 Tf 0.1 0.1 0.12 rg 52 168.34 Td (The Financial Department \(weight 5\)) Tj ET
+BT /F1 9.5 Tf 0.4 0.4 0.45 rg 52 154.52 Td (financial: 6) Tj ET
+BT /F1 9.5 Tf 0.4 0.4 0.45 rg 52 140.69 Td (Launch now with $10,000: 5 | Pre-sell a first batch, then decide: 8 | Do nothing: 4) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 126.87 Td (Pays back in the expected case; working capital is not modelled.) Tj ET
+BT /F2 10.5 Tf 0.1 0.1 0.12 rg 52 106.69 Td (Market Intelligence Department \(weight 4\)) Tj ET
+BT /F1 9.5 Tf 0.4 0.4 0.45 rg 52 92.87 Td (market: 5) Tj ET
+BT /F1 9.5 Tf 0.4 0.4 0.45 rg 52 79.04 Td (Launch now with $10,000: 5 | Pre-sell a first batch, then decide: 7 | Do nothing: 3) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 65.22 Td (No demand evidence yet.) Tj ET
+BT /F1 8 Tf 0.5 0.5 0.55 rg 52 28 Td (Roast Room  |  page 3 of 5) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 1640 >>
+stream
+BT /F2 10.5 Tf 0.1 0.1 0.12 rg 52 775.72 Td (International Trade Department \(weight 3\)) Tj ET
+BT /F1 9.5 Tf 0.4 0.4 0.45 rg 52 761.89 Td (operational: 6 | market: 5) Tj ET
+BT /F1 9.5 Tf 0.4 0.4 0.45 rg 52 748.06 Td (Launch now with $10,000: 4 | Pre-sell a first batch, then decide: 7 | Do nothing: 3) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 734.24 Td (Duties and freight unresearched.) Tj ET
+BT /F2 10.5 Tf 0.1 0.1 0.12 rg 52 714.06 Td (Legal and Compliance Department \(weight 3\)) Tj ET
+BT /F1 9.5 Tf 0.4 0.4 0.45 rg 52 700.24 Td (legal: 5 | risk: 5) Tj ET
+BT /F1 9.5 Tf 0.4 0.4 0.45 rg 52 686.41 Td (Launch now with $10,000: 4 | Pre-sell a first batch, then decide: 7 | Do nothing: 5) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 672.59 Td (Trademark and supplier contract unaddressed.) Tj ET
+BT /F2 10.5 Tf 0.1 0.1 0.12 rg 52 652.41 Td (Risk Management Department \(weight 4\)) Tj ET
+BT /F1 9.5 Tf 0.4 0.4 0.45 rg 52 638.59 Td (risk: 4) Tj ET
+BT /F1 9.5 Tf 0.4 0.4 0.45 rg 52 624.76 Td (Launch now with $10,000: 3 | Pre-sell a first batch, then decide: 7 | Do nothing: 6) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 610.94 Td (Whole capital committed to one untested batch.) Tj ET
+BT /F2 10.5 Tf 0.1 0.1 0.12 rg 52 590.76 Td (Negotiation and Procurement Department \(weight 3\)) Tj ET
+BT /F1 9.5 Tf 0.4 0.4 0.45 rg 52 576.94 Td (operational: 5 | financial: 5) Tj ET
+BT /F1 9.5 Tf 0.4 0.4 0.45 rg 52 563.11 Td (Launch now with $10,000: 4 | Pre-sell a first batch, then decide: 7 | Do nothing: 4) Tj ET
+BT /F1 9.5 Tf 0.1 0.1 0.12 rg 52 549.29 Td (No quotations in hand.) Tj ET
+BT /F1 8 Tf 0.5 0.5 0.55 rg 52 28 Td (Roast Room  |  page 4 of 5) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Length 1406 >>
+stream
+BT /F2 9 Tf 0.91 0.4 0.29 rg 52 771.74 Td (DEBATE TRANSCRIPT) Tj ET
+BT /F2 12 Tf 0.1 0.1 0.12 rg 52 748.54 Td (Round 1: Opening positions) Tj ET
+BT /F2 10 Tf 0.1 0.1 0.12 rg 52 731.04 Td (The Financial Department) Tj ET
+BT /F1 10 Tf 0.1 0.1 0.12 rg 60 716.54 Td (On the founder inputs the expected case repays the $10,000 in about five months, but the model has no) Tj ET
+BT /F1 10 Tf 0.1 0.1 0.12 rg 60 703.04 Td (working capital. Paying a manufacturer before selling a unit means the real cash need is above $10,000.) Tj ET
+BT /F1 10 Tf 0.1 0.1 0.12 rg 60 689.54 Td (The pessimistic case barely breaks even.) Tj ET
+BT /F2 10 Tf 0.1 0.1 0.12 rg 52 670.04 Td (Negotiation and Procurement Department) Tj ET
+BT /F1 10 Tf 0.1 0.1 0.12 rg 60 655.54 Td (Nobody has quoted a unit cost. The $8 is an input, not a quotation. Get three RFQs with MOQ, payment terms) Tj ET
+BT /F1 10 Tf 0.1 0.1 0.12 rg 60 642.04 Td (and incoterms before committing.) Tj ET
+0.85 0.85 0.88 RG 0.6 w 52 632.04 m 543.28 632.04 l S
+BT /F2 9 Tf 0.91 0.4 0.29 rg 52 607.89 Td (SOURCE REFERENCES) Tj ET
+BT /F1 9 Tf 0.4 0.4 0.45 rg 52 592.74 Td (No external sources were cited.) Tj ET
+BT /F1 8.5 Tf 0.4 0.4 0.45 rg 52 577.26 Td (This report is general AI-assisted analysis, not financial, investment or qualified legal advice. Verify material facts independently.) Tj ET
+BT /F1 8 Tf 0.5 0.5 0.55 rg 52 28 Td (Roast Room  |  page 5 of 5) Tj ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 13 0 R >>
+endobj
 xref
-0 9
+0 15
 0000000000 65535 f 
 0000000009 00000 n 
 0000000058 00000 n 
-0000000121 00000 n 
-0000000218 00000 n 
-0000000320 00000 n 
-0000003885 00000 n 
-0000004027 00000 n 
-0000005413 00000 n 
+0000000142 00000 n 
+0000000239 00000 n 
+0000000341 00000 n 
+0000006397 00000 n 
+0000006539 00000 n 
+0000011804 00000 n 
+0000011946 00000 n 
+0000016031 00000 n 
+0000016174 00000 n 
+0000017867 00000 n 
+0000018011 00000 n 
+0000019470 00000 n 
 trailer
-<< /Size 9 /Root 1 0 R >>
+<< /Size 15 /Root 1 0 R >>
 startxref
-5555
+19614
 %%EOF

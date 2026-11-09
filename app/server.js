@@ -5,6 +5,8 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const { buildReport } = require('./pdf');
+const finance = require('./finance');
+const { computeVerdict } = require('./verdict');
 
 const PORT = Number(process.env.PORT) || 4730;
 const ROOT = path.join(__dirname, '..');
@@ -21,6 +23,24 @@ function roster() {
   } catch {
     return [];
   }
+}
+
+const MODES = path.join(ROOT, '.claude/skills/roast-room/modes.json');
+function modeWeights(mode) {
+  try {
+    const m = JSON.parse(fs.readFileSync(MODES, 'utf8')).modes[mode];
+    return m ? m.weights : null;
+  } catch {
+    return null;
+  }
+}
+
+function addEvent(s, ev) {
+  ev.ts = Date.now();
+  s.events.push(ev);
+  persist(s);
+  broadcast(ev);
+  return ev;
 }
 
 function safeId(id) {
@@ -118,13 +138,69 @@ const server = http.createServer(async (req, res) => {
       }
       const id = safeId(ev.session);
       if (!id || !ev.type) return send(res, 400, { error: 'session and type required' });
-      ev.ts = Date.now();
       let s = sessions.get(id);
       if (!s) sessions.set(id, (s = { id, events: [] }));
-      s.events.push(ev);
-      persist(s);
-      broadcast(ev);
+      addEvent(s, ev);
       return send(res, 200, { ok: true, n: s.events.length });
+    }
+
+    // ---- finance and verdict engines (deterministic) ----
+    if (p === '/api/finance/simulate' && req.method === 'POST') {
+      const body = JSON.parse((await readBody(req)) || '{}');
+      const out = finance.simulate(body.inputs, body.scenarios);
+      return send(res, out.ok ? 200 : 400, out);
+    }
+    if (p === '/api/finance/whatif' && req.method === 'POST') {
+      const body = JSON.parse((await readBody(req)) || '{}');
+      const out = finance.whatIf(body.base, body.changes, body.scenarios);
+      return send(res, out.ok ? 200 : 400, out);
+    }
+    if (p === '/api/finance/compare' && req.method === 'POST') {
+      const body = JSON.parse((await readBody(req)) || '{}');
+      const out = finance.compare(body.items);
+      return send(res, out.ok ? 200 : 400, out);
+    }
+
+    const sm = p.match(/^\/api\/sessions\/([^/]+)\/(finance|whatif|finalize)$/);
+    if (sm && req.method === 'POST') {
+      const s = sessions.get(sm[1]);
+      if (!s) return send(res, 404, { error: 'session not found' });
+      let body;
+      try {
+        body = JSON.parse((await readBody(req)) || '{}');
+      } catch {
+        return send(res, 400, { error: 'invalid json' });
+      }
+      const start = s.events.find((e) => e.type === 'start') || {};
+
+      if (sm[2] === 'finance') {
+        const result = finance.simulate(body.inputs, body.scenarios);
+        if (!result.ok) return send(res, 400, result);
+        addEvent(s, { session: s.id, type: 'finance', inputs: result.inputs, result });
+        return send(res, 200, result);
+      }
+
+      if (sm[2] === 'whatif') {
+        const latest = s.events.filter((e) => e.type === 'finance').pop();
+        if (!latest) return send(res, 400, { ok: false, errors: ['Run the finance model for this session first'] });
+        const out = finance.whatIf(latest.inputs, body.changes, body.scenarios);
+        if (!out.ok) return send(res, 400, out);
+        const weights = body.weights || modeWeights(start.mode) || undefined;
+        const before = computeVerdict(s.events, { weights });
+        const after = computeVerdict(s.events, { weights, financeOverride: { result: out.changed } });
+        const payload = { label: body.label || 'What-if', applied: out.applied, delta: out.delta, before: { recommendation: before.recommendation, overall: before.overall }, after: { recommendation: after.recommendation, overall: after.overall, conditions: after.conditions, caps: after.caps }, changed: out.changed };
+        addEvent(s, { session: s.id, type: 'whatif', ...payload });
+        return send(res, 200, { ok: true, ...payload, recommendationChanged: before.recommendation !== after.recommendation });
+      }
+
+      if (sm[2] === 'finalize') {
+        const weights = body.weights || modeWeights(start.mode) || undefined;
+        const v = computeVerdict(s.events, { weights });
+        const narrative = {};
+        for (const k of ['summary', 'strengths', 'weaknesses', 'disagreements', 'alternatives', 'risks', 'next_steps']) if (body[k] !== undefined) narrative[k] = body[k];
+        const ev = addEvent(s, { session: s.id, type: 'verdict', ...v, ...narrative, weightsUsed: weights || 'criteria.json defaults' });
+        return send(res, 200, ev);
+      }
     }
 
     const r = p.match(/^\/report\/([^/]+)\.pdf$/);
@@ -145,6 +221,7 @@ const server = http.createServer(async (req, res) => {
     }
     return send(res, 404, { error: 'not found' });
   } catch (e) {
+    if (e instanceof SyntaxError) return send(res, 400, { error: 'invalid json' });
     console.error(e);
     send(res, 500, { error: 'server error' });
   }

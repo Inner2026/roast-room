@@ -1,113 +1,1526 @@
 [
   {
-    "session": "demo-pricing",
+    "session": "example-thailand-accessories",
     "type": "start",
-    "decision": "I run a coaching business at $30k a month with 15 clients at $2,000 each. Should I raise to $3,500 for everyone, raise for new clients only, or keep $2,000?",
+    "mode": "startup",
+    "decision": "ILLUSTRATIVE EXAMPLE: A founder wants to invest $10,000 in a private-label accessories brand made by a manufacturer in Thailand and sold internationally.",
     "options": [
-      "Raise all to $3,500",
-      "Raise new clients only",
-      "Keep $2,000"
+      "Launch now with $10,000",
+      "Pre-sell a first batch, then decide",
+      "Do nothing"
     ],
     "seats": [
-      "allocator",
-      "architect",
-      "growth",
-      "operator",
-      "contrarian",
-      "advocate",
-      "strategist"
+      "fin",
+      "market",
+      "trade",
+      "legal",
+      "riskmgr",
+      "procure",
+      "devil"
     ],
-    "ts": 1794250232941
+    "ts": 1794250704319
   },
   {
-    "session": "demo-pricing",
+    "session": "example-thailand-accessories",
+    "type": "research",
+    "summary": "Illustrative placeholder. No live research was run for this example, so no market statistic is claimed. In a real session the Research Agent fills this with cited, dated findings.",
+    "claims": [
+      {
+        "text": "Unit cost, MOQ and lead time were not researched in this example",
+        "status": "unavailable"
+      },
+      {
+        "text": "Selling price of $20 and 400 units a month are the founder inputs used in the model",
+        "status": "assumption"
+      },
+      {
+        "text": "Competitor pricing was not researched in this example",
+        "status": "unavailable"
+      }
+    ],
+    "gaps": [
+      "Competitor prices",
+      "Manufacturer MOQ and lead time",
+      "Import duties by destination",
+      "Trademark status in target markets"
+    ],
+    "ts": 1794250704326
+  },
+  {
+    "session": "example-thailand-accessories",
+    "type": "finance",
+    "inputs": {
+      "initialInvestment": 10000,
+      "price": 20,
+      "unitsPerMonth": 400,
+      "unitVariableCost": 8,
+      "availableCapital": 10000,
+      "marketingMonthly": 1500,
+      "fixedMonthly": 500,
+      "taxRatePct": 0,
+      "feesPct": 3,
+      "growthPctMonthly": 0,
+      "months": 12
+    },
+    "result": {
+      "ok": true,
+      "inputs": {
+        "initialInvestment": 10000,
+        "price": 20,
+        "unitsPerMonth": 400,
+        "unitVariableCost": 8,
+        "availableCapital": 10000,
+        "marketingMonthly": 1500,
+        "fixedMonthly": 500,
+        "taxRatePct": 0,
+        "feesPct": 3,
+        "growthPctMonthly": 0,
+        "months": 12
+      },
+      "assumptions": [],
+      "scenarioAssumptions": {
+        "optimistic": {
+          "units": 1.25,
+          "price": 1,
+          "varCost": 0.9,
+          "marketing": 1,
+          "fixed": 1,
+          "growthDeltaPct": 0
+        },
+        "expected": {
+          "units": 1,
+          "price": 1,
+          "varCost": 1,
+          "marketing": 1,
+          "fixed": 1,
+          "growthDeltaPct": 0
+        },
+        "pessimistic": {
+          "units": 0.6,
+          "price": 1,
+          "varCost": 1.2,
+          "marketing": 1,
+          "fixed": 1.1,
+          "growthDeltaPct": 0
+        }
+      },
+      "scenarioNote": "Optimistic and pessimistic scenarios use default stress multipliers that are assumptions, not research findings.",
+      "limitations": [
+        "No working-capital or inventory-timing model: stock bought before sales is not modelled, so early cash need is understated for product businesses.",
+        "Tax is applied to positive monthly operating profit only; losses are not carried forward.",
+        "Units grow at a constant monthly rate; no seasonality, no churn, no price changes over time.",
+        "Currency conversion, shipping, duties and returns must already be inside the unit cost or fixed costs."
+      ],
+      "scenarios": {
+        "optimistic": {
+          "totals": {
+            "revenue": 120000,
+            "cogs": 43200,
+            "gross": 76800,
+            "fees": 3600,
+            "marketing": 18000,
+            "fixed": 6000,
+            "operating": 49200,
+            "tax": 0,
+            "net": 49200
+          },
+          "metrics": {
+            "grossRevenue": 120000,
+            "costOfGoodsSold": 43200,
+            "grossProfit": 76800,
+            "operatingProfit": 49200,
+            "netProfit": 49200,
+            "grossMarginPct": 64,
+            "netMarginPct": 41,
+            "breakEvenUnitsPerMonth": 163.93,
+            "roiPct": 392,
+            "paybackMonth": 3,
+            "peakFundingNeed": 10000,
+            "cashSufficient": true,
+            "firstNegativeCashMonth": null
+          },
+          "monthly": [
+            {
+              "month": 1,
+              "units": 500,
+              "revenue": 10000,
+              "cogs": 3600,
+              "grossProfit": 6400,
+              "operatingProfit": 4100,
+              "tax": 0,
+              "netProfit": 4100,
+              "cumulativeCash": -5900
+            },
+            {
+              "month": 2,
+              "units": 500,
+              "revenue": 10000,
+              "cogs": 3600,
+              "grossProfit": 6400,
+              "operatingProfit": 4100,
+              "tax": 0,
+              "netProfit": 4100,
+              "cumulativeCash": -1800
+            },
+            {
+              "month": 3,
+              "units": 500,
+              "revenue": 10000,
+              "cogs": 3600,
+              "grossProfit": 6400,
+              "operatingProfit": 4100,
+              "tax": 0,
+              "netProfit": 4100,
+              "cumulativeCash": 2300
+            },
+            {
+              "month": 4,
+              "units": 500,
+              "revenue": 10000,
+              "cogs": 3600,
+              "grossProfit": 6400,
+              "operatingProfit": 4100,
+              "tax": 0,
+              "netProfit": 4100,
+              "cumulativeCash": 6400
+            },
+            {
+              "month": 5,
+              "units": 500,
+              "revenue": 10000,
+              "cogs": 3600,
+              "grossProfit": 6400,
+              "operatingProfit": 4100,
+              "tax": 0,
+              "netProfit": 4100,
+              "cumulativeCash": 10500
+            },
+            {
+              "month": 6,
+              "units": 500,
+              "revenue": 10000,
+              "cogs": 3600,
+              "grossProfit": 6400,
+              "operatingProfit": 4100,
+              "tax": 0,
+              "netProfit": 4100,
+              "cumulativeCash": 14600
+            },
+            {
+              "month": 7,
+              "units": 500,
+              "revenue": 10000,
+              "cogs": 3600,
+              "grossProfit": 6400,
+              "operatingProfit": 4100,
+              "tax": 0,
+              "netProfit": 4100,
+              "cumulativeCash": 18700
+            },
+            {
+              "month": 8,
+              "units": 500,
+              "revenue": 10000,
+              "cogs": 3600,
+              "grossProfit": 6400,
+              "operatingProfit": 4100,
+              "tax": 0,
+              "netProfit": 4100,
+              "cumulativeCash": 22800
+            },
+            {
+              "month": 9,
+              "units": 500,
+              "revenue": 10000,
+              "cogs": 3600,
+              "grossProfit": 6400,
+              "operatingProfit": 4100,
+              "tax": 0,
+              "netProfit": 4100,
+              "cumulativeCash": 26900
+            },
+            {
+              "month": 10,
+              "units": 500,
+              "revenue": 10000,
+              "cogs": 3600,
+              "grossProfit": 6400,
+              "operatingProfit": 4100,
+              "tax": 0,
+              "netProfit": 4100,
+              "cumulativeCash": 31000
+            },
+            {
+              "month": 11,
+              "units": 500,
+              "revenue": 10000,
+              "cogs": 3600,
+              "grossProfit": 6400,
+              "operatingProfit": 4100,
+              "tax": 0,
+              "netProfit": 4100,
+              "cumulativeCash": 35100
+            },
+            {
+              "month": 12,
+              "units": 500,
+              "revenue": 10000,
+              "cogs": 3600,
+              "grossProfit": 6400,
+              "operatingProfit": 4100,
+              "tax": 0,
+              "netProfit": 4100,
+              "cumulativeCash": 39200
+            }
+          ]
+        },
+        "expected": {
+          "totals": {
+            "revenue": 96000,
+            "cogs": 38400,
+            "gross": 57600,
+            "fees": 2880,
+            "marketing": 18000,
+            "fixed": 6000,
+            "operating": 30720,
+            "tax": 0,
+            "net": 30720
+          },
+          "metrics": {
+            "grossRevenue": 96000,
+            "costOfGoodsSold": 38400,
+            "grossProfit": 57600,
+            "operatingProfit": 30720,
+            "netProfit": 30720,
+            "grossMarginPct": 60,
+            "netMarginPct": 32,
+            "breakEvenUnitsPerMonth": 175.44,
+            "roiPct": 207.2,
+            "paybackMonth": 4,
+            "peakFundingNeed": 10000,
+            "cashSufficient": true,
+            "firstNegativeCashMonth": null
+          },
+          "monthly": [
+            {
+              "month": 1,
+              "units": 400,
+              "revenue": 8000,
+              "cogs": 3200,
+              "grossProfit": 4800,
+              "operatingProfit": 2560,
+              "tax": 0,
+              "netProfit": 2560,
+              "cumulativeCash": -7440
+            },
+            {
+              "month": 2,
+              "units": 400,
+              "revenue": 8000,
+              "cogs": 3200,
+              "grossProfit": 4800,
+              "operatingProfit": 2560,
+              "tax": 0,
+              "netProfit": 2560,
+              "cumulativeCash": -4880
+            },
+            {
+              "month": 3,
+              "units": 400,
+              "revenue": 8000,
+              "cogs": 3200,
+              "grossProfit": 4800,
+              "operatingProfit": 2560,
+              "tax": 0,
+              "netProfit": 2560,
+              "cumulativeCash": -2320
+            },
+            {
+              "month": 4,
+              "units": 400,
+              "revenue": 8000,
+              "cogs": 3200,
+              "grossProfit": 4800,
+              "operatingProfit": 2560,
+              "tax": 0,
+              "netProfit": 2560,
+              "cumulativeCash": 240
+            },
+            {
+              "month": 5,
+              "units": 400,
+              "revenue": 8000,
+              "cogs": 3200,
+              "grossProfit": 4800,
+              "operatingProfit": 2560,
+              "tax": 0,
+              "netProfit": 2560,
+              "cumulativeCash": 2800
+            },
+            {
+              "month": 6,
+              "units": 400,
+              "revenue": 8000,
+              "cogs": 3200,
+              "grossProfit": 4800,
+              "operatingProfit": 2560,
+              "tax": 0,
+              "netProfit": 2560,
+              "cumulativeCash": 5360
+            },
+            {
+              "month": 7,
+              "units": 400,
+              "revenue": 8000,
+              "cogs": 3200,
+              "grossProfit": 4800,
+              "operatingProfit": 2560,
+              "tax": 0,
+              "netProfit": 2560,
+              "cumulativeCash": 7920
+            },
+            {
+              "month": 8,
+              "units": 400,
+              "revenue": 8000,
+              "cogs": 3200,
+              "grossProfit": 4800,
+              "operatingProfit": 2560,
+              "tax": 0,
+              "netProfit": 2560,
+              "cumulativeCash": 10480
+            },
+            {
+              "month": 9,
+              "units": 400,
+              "revenue": 8000,
+              "cogs": 3200,
+              "grossProfit": 4800,
+              "operatingProfit": 2560,
+              "tax": 0,
+              "netProfit": 2560,
+              "cumulativeCash": 13040
+            },
+            {
+              "month": 10,
+              "units": 400,
+              "revenue": 8000,
+              "cogs": 3200,
+              "grossProfit": 4800,
+              "operatingProfit": 2560,
+              "tax": 0,
+              "netProfit": 2560,
+              "cumulativeCash": 15600
+            },
+            {
+              "month": 11,
+              "units": 400,
+              "revenue": 8000,
+              "cogs": 3200,
+              "grossProfit": 4800,
+              "operatingProfit": 2560,
+              "tax": 0,
+              "netProfit": 2560,
+              "cumulativeCash": 18160
+            },
+            {
+              "month": 12,
+              "units": 400,
+              "revenue": 8000,
+              "cogs": 3200,
+              "grossProfit": 4800,
+              "operatingProfit": 2560,
+              "tax": 0,
+              "netProfit": 2560,
+              "cumulativeCash": 20720
+            }
+          ]
+        },
+        "pessimistic": {
+          "totals": {
+            "revenue": 57600,
+            "cogs": 27648,
+            "gross": 29952,
+            "fees": 1728,
+            "marketing": 18000,
+            "fixed": 6600,
+            "operating": 3624,
+            "tax": 0,
+            "net": 3624
+          },
+          "metrics": {
+            "grossRevenue": 57600,
+            "costOfGoodsSold": 27648,
+            "grossProfit": 29952,
+            "operatingProfit": 3624,
+            "netProfit": 3624,
+            "grossMarginPct": 52,
+            "netMarginPct": 6.29,
+            "breakEvenUnitsPerMonth": 209.18,
+            "roiPct": -63.76,
+            "paybackMonth": null,
+            "peakFundingNeed": 10000,
+            "cashSufficient": true,
+            "firstNegativeCashMonth": null
+          },
+          "monthly": [
+            {
+              "month": 1,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 2304,
+              "grossProfit": 2496,
+              "operatingProfit": 302,
+              "tax": 0,
+              "netProfit": 302,
+              "cumulativeCash": -9698
+            },
+            {
+              "month": 2,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 2304,
+              "grossProfit": 2496,
+              "operatingProfit": 302,
+              "tax": 0,
+              "netProfit": 302,
+              "cumulativeCash": -9396
+            },
+            {
+              "month": 3,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 2304,
+              "grossProfit": 2496,
+              "operatingProfit": 302,
+              "tax": 0,
+              "netProfit": 302,
+              "cumulativeCash": -9094
+            },
+            {
+              "month": 4,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 2304,
+              "grossProfit": 2496,
+              "operatingProfit": 302,
+              "tax": 0,
+              "netProfit": 302,
+              "cumulativeCash": -8792
+            },
+            {
+              "month": 5,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 2304,
+              "grossProfit": 2496,
+              "operatingProfit": 302,
+              "tax": 0,
+              "netProfit": 302,
+              "cumulativeCash": -8490
+            },
+            {
+              "month": 6,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 2304,
+              "grossProfit": 2496,
+              "operatingProfit": 302,
+              "tax": 0,
+              "netProfit": 302,
+              "cumulativeCash": -8188
+            },
+            {
+              "month": 7,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 2304,
+              "grossProfit": 2496,
+              "operatingProfit": 302,
+              "tax": 0,
+              "netProfit": 302,
+              "cumulativeCash": -7886
+            },
+            {
+              "month": 8,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 2304,
+              "grossProfit": 2496,
+              "operatingProfit": 302,
+              "tax": 0,
+              "netProfit": 302,
+              "cumulativeCash": -7584
+            },
+            {
+              "month": 9,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 2304,
+              "grossProfit": 2496,
+              "operatingProfit": 302,
+              "tax": 0,
+              "netProfit": 302,
+              "cumulativeCash": -7282
+            },
+            {
+              "month": 10,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 2304,
+              "grossProfit": 2496,
+              "operatingProfit": 302,
+              "tax": 0,
+              "netProfit": 302,
+              "cumulativeCash": -6980
+            },
+            {
+              "month": 11,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 2304,
+              "grossProfit": 2496,
+              "operatingProfit": 302,
+              "tax": 0,
+              "netProfit": 302,
+              "cumulativeCash": -6678
+            },
+            {
+              "month": 12,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 2304,
+              "grossProfit": 2496,
+              "operatingProfit": 302,
+              "tax": 0,
+              "netProfit": 302,
+              "cumulativeCash": -6376
+            }
+          ]
+        }
+      }
+    },
+    "ts": 1794250704333
+  },
+  {
+    "session": "example-thailand-accessories",
     "type": "round",
     "n": 1,
     "title": "Opening positions",
-    "ts": 1794250232950
+    "ts": 1794250704338
   },
   {
-    "session": "demo-pricing",
+    "session": "example-thailand-accessories",
     "type": "message",
-    "seat": "allocator",
+    "seat": "fin",
     "round": 1,
-    "text": "Cash first. Raising all 15 clients to $3,500 lifts revenue to $52,500 if nobody leaves. Losing 5 clients puts you at $35,000, still above today. The downside is survivable, but a blanket rise bets your whole base on one assumption.",
-    "ts": 1794250232956
+    "text": "On the founder inputs the expected case repays the $10,000 in about five months, but the model has no working capital. Paying a manufacturer before selling a unit means the real cash need is above $10,000. The pessimistic case barely breaks even.",
+    "ts": 1794250704343
   },
   {
-    "session": "demo-pricing",
+    "session": "example-thailand-accessories",
     "type": "message",
-    "seat": "architect",
+    "seat": "procure",
     "round": 1,
-    "text": "At $2,000 you are underpriced if you have a waitlist or fast results. Raise, but attach a better offer: a guarantee or a premium tier, so the rise reads as upgrade, not tax.",
-    "ts": 1794250232963
+    "text": "Nobody has quoted a unit cost. The $8 is an input, not a quotation. Get three RFQs with MOQ, payment terms and incoterms before committing.",
+    "ts": 1794250704348
   },
   {
-    "session": "demo-pricing",
-    "type": "message",
-    "seat": "contrarian",
-    "round": 1,
-    "text": "You said you lean toward raising because you feel underpaid. That is a feeling, not evidence. What do your last five sales calls say about price resistance?",
-    "ts": 1794250232970
+    "session": "example-thailand-accessories",
+    "type": "objection",
+    "seat": "devil",
+    "severity": "blocking",
+    "text": "Demand, unit cost and trademark ownership are all unproven, and the whole $10,000 is committed before any of them is tested. A single failed batch ends the venture.",
+    "conditions": [
+      "Obtain at least 3 written manufacturer quotations",
+      "Pre-sell or waitlist at least 50 units before the first production run",
+      "Register the brand in the first target market"
+    ],
+    "alternatives": [
+      "Order a small sample batch first",
+      "Sell through one marketplace before building a store"
+    ],
+    "ts": 1794250704352
   },
   {
-    "session": "demo-pricing",
-    "type": "scores",
-    "seat": "allocator",
-    "weight": 4,
-    "scores": {
-      "Raise all to $3,500": 6,
-      "Raise new clients only": 8,
-      "Keep $2,000": 5
-    },
-    "ruin": false,
-    "why": "Staged rise limits downside while testing demand.",
-    "ts": 1794250232976
-  },
-  {
-    "session": "demo-pricing",
-    "type": "scores",
-    "seat": "architect",
+    "seat": "fin",
     "weight": 5,
+    "criteria": {
+      "financial": 6
+    },
     "scores": {
-      "Raise all to $3,500": 8,
-      "Raise new clients only": 8,
-      "Keep $2,000": 3
+      "Launch now with $10,000": 5,
+      "Pre-sell a first batch, then decide": 8,
+      "Do nothing": 4
     },
     "ruin": false,
-    "why": "Underpriced; either rise beats staying put.",
-    "ts": 1794250232982
-  },
-  {
-    "session": "demo-pricing",
+    "why": "Pays back in the expected case; working capital is not modelled.",
+    "session": "example-thailand-accessories",
     "type": "scores",
-    "seat": "advocate",
-    "weight": 4,
-    "scores": {
-      "Raise all to $3,500": 4,
-      "Raise new clients only": 8,
-      "Keep $2,000": 6
-    },
-    "ruin": false,
-    "why": "A surprise 75% rise damages trust with loyal clients.",
-    "ts": 1794250232988
+    "ts": 1794250704373
   },
   {
-    "session": "demo-pricing",
+    "seat": "market",
+    "weight": 4,
+    "criteria": {
+      "market": 5
+    },
+    "scores": {
+      "Launch now with $10,000": 5,
+      "Pre-sell a first batch, then decide": 7,
+      "Do nothing": 3
+    },
+    "ruin": false,
+    "why": "No demand evidence yet.",
+    "session": "example-thailand-accessories",
+    "type": "scores",
+    "ts": 1794250704394
+  },
+  {
+    "seat": "trade",
+    "weight": 3,
+    "criteria": {
+      "operational": 6,
+      "market": 5
+    },
+    "scores": {
+      "Launch now with $10,000": 4,
+      "Pre-sell a first batch, then decide": 7,
+      "Do nothing": 3
+    },
+    "ruin": false,
+    "why": "Duties and freight unresearched.",
+    "session": "example-thailand-accessories",
+    "type": "scores",
+    "ts": 1794250704414
+  },
+  {
+    "seat": "legal",
+    "weight": 3,
+    "criteria": {
+      "legal": 5,
+      "risk": 5
+    },
+    "scores": {
+      "Launch now with $10,000": 4,
+      "Pre-sell a first batch, then decide": 7,
+      "Do nothing": 5
+    },
+    "ruin": false,
+    "why": "Trademark and supplier contract unaddressed.",
+    "session": "example-thailand-accessories",
+    "type": "scores",
+    "ts": 1794250704434
+  },
+  {
+    "seat": "riskmgr",
+    "weight": 4,
+    "criteria": {
+      "risk": 4
+    },
+    "scores": {
+      "Launch now with $10,000": 3,
+      "Pre-sell a first batch, then decide": 7,
+      "Do nothing": 6
+    },
+    "ruin": false,
+    "why": "Whole capital committed to one untested batch.",
+    "session": "example-thailand-accessories",
+    "type": "scores",
+    "ts": 1794250704455
+  },
+  {
+    "seat": "procure",
+    "weight": 3,
+    "criteria": {
+      "operational": 5,
+      "financial": 5
+    },
+    "scores": {
+      "Launch now with $10,000": 4,
+      "Pre-sell a first batch, then decide": 7,
+      "Do nothing": 4
+    },
+    "ruin": false,
+    "why": "No quotations in hand.",
+    "session": "example-thailand-accessories",
+    "type": "scores",
+    "ts": 1794250704474
+  },
+  {
+    "session": "example-thailand-accessories",
     "type": "verdict",
-    "winner": "Raise new clients only",
-    "confidence": 74,
-    "summary": "Test the $3,500 price on new clients first and grandfather the existing 15 for a defined period. You learn real price resistance without risking the base.",
+    "recommendation": "Postpone",
+    "overall": 5.1,
+    "criteria": [
+      {
+        "key": "financial",
+        "label": "Financial viability",
+        "weight": 25,
+        "score": 5.6,
+        "seats": [
+          "fin",
+          "procure"
+        ],
+        "spread": 0.5
+      },
+      {
+        "key": "market",
+        "label": "Market attractiveness",
+        "weight": 25,
+        "score": 5,
+        "seats": [
+          "market",
+          "trade"
+        ],
+        "spread": 0
+      },
+      {
+        "key": "operational",
+        "label": "Operational feasibility",
+        "weight": 15,
+        "score": 5.5,
+        "seats": [
+          "trade",
+          "procure"
+        ],
+        "spread": 0.5
+      },
+      {
+        "key": "risk",
+        "label": "Risk exposure (10 = low risk)",
+        "weight": 20,
+        "score": 4.4,
+        "seats": [
+          "legal",
+          "riskmgr"
+        ],
+        "spread": 0.5
+      },
+      {
+        "key": "strategic",
+        "label": "Strategic fit",
+        "weight": 5,
+        "score": null,
+        "seats": [],
+        "spread": 0
+      },
+      {
+        "key": "legal",
+        "label": "Legal and compliance",
+        "weight": 10,
+        "score": 5,
+        "seats": [
+          "legal"
+        ],
+        "spread": 0
+      }
+    ],
+    "coverage": 0.95,
+    "caps": [],
+    "conditions": [
+      "Obtain at least 3 written manufacturer quotations",
+      "Pre-sell or waitlist at least 50 units before the first production run",
+      "Register the brand in the first target market"
+    ],
+    "reasoning": [
+      "Weighted overall 5.1/10 across 5 of 6 criteria (95% of weight assessed); not assessed: Strategic fit.",
+      "Financial viability: 5.6/10 at weight 25 (seats: fin, procure).",
+      "Market attractiveness: 5/10 at weight 25 (seats: market, trade).",
+      "Operational feasibility: 5.5/10 at weight 15 (seats: trade, procure).",
+      "Risk exposure (10 = low risk): 4.4/10 at weight 20 (seats: legal, riskmgr).",
+      "Legal and compliance: 5/10 at weight 10 (seats: legal).",
+      "Score 5.1 maps to \"Postpone\" using thresholds proceed>=7, conditional>=5.5, postpone>=4.",
+      "No caps applied.",
+      "Board confidence 54% (subjective; see factors)."
+    ],
+    "confidence": {
+      "score": 54,
+      "label": "Subjective board confidence built from evidence quality, agreement and coverage. It is not a statistically calibrated probability of success.",
+      "factors": [
+        "+0 evidence: 0 of 3 research claims verified",
+        "+14 agreement between seats (avg spread 0.3)",
+        "-10 unresolved blocking objection(s)"
+      ]
+    },
+    "ranking": [
+      {
+        "option": "Pre-sell a first batch, then decide",
+        "score": 7.2,
+        "capped": false,
+        "ruinBy": []
+      },
+      {
+        "option": "Launch now with $10,000",
+        "score": 4.2,
+        "capped": false,
+        "ruinBy": []
+      },
+      {
+        "option": "Do nothing",
+        "score": 4.2,
+        "capped": false,
+        "ruinBy": []
+      }
+    ],
+    "winner": "Pre-sell a first batch, then decide",
+    "objections": [
+      {
+        "severity": "blocking",
+        "text": "Demand, unit cost and trademark ownership are all unproven, and the whole $10,000 is committed before any of them is tested. A single failed batch ends the venture.",
+        "conditions": [
+          "Obtain at least 3 written manufacturer quotations",
+          "Pre-sell or waitlist at least 50 units before the first production run",
+          "Register the brand in the first target market"
+        ]
+      }
+    ],
+    "summary": "The model works on the founder inputs, but demand, unit cost and trademark protection are untested while all of the capital is exposed. Test demand with a pre-sale before the first production run.",
+    "strengths": [
+      "Healthy gross margin on the stated inputs (60%)"
+    ],
+    "weaknesses": [
+      "No evidence of demand",
+      "Unit cost is an input, not a quotation",
+      "No working-capital model"
+    ],
+    "disagreements": [
+      "Financial Department sees payback inside the year; Risk Management sees the whole capital exposed to one batch"
+    ],
+    "alternatives": [
+      "Sample batch first",
+      "One marketplace before a store"
+    ],
     "risks": [
-      "New-client close rate may drop at $3,500",
-      "Existing clients may notice and ask for the new rate",
-      "You may be tempted to rise for everyone before you have data"
+      "Failed first batch",
+      "Trademark conflict",
+      "Freight and duty costs above plan"
     ],
     "next_steps": [
-      "Publish the $3,500 offer to new leads this week",
-      "Track close rate on the next 10 calls",
-      "Decide on a migration plan for existing clients at day 60"
+      "Request 3 RFQs this week",
+      "Open a waitlist and target 50 pre-orders",
+      "File the trademark in the first market"
     ],
-    "ts": 1794250232994
+    "weightsUsed": {
+      "financial": 25,
+      "market": 25,
+      "operational": 15,
+      "risk": 20,
+      "strategic": 5,
+      "legal": 10
+    },
+    "ts": 1794250704480
+  },
+  {
+    "session": "example-thailand-accessories",
+    "type": "whatif",
+    "label": "Sales 40% lower",
+    "applied": [
+      {
+        "field": "unitsPerMonth",
+        "mode": "pct",
+        "value": -40,
+        "from": 400,
+        "to": 240
+      }
+    ],
+    "delta": {
+      "grossRevenue": {
+        "base": 96000,
+        "changed": 57600,
+        "change": -38400
+      },
+      "grossProfit": {
+        "base": 57600,
+        "changed": 34560,
+        "change": -23040
+      },
+      "netProfit": {
+        "base": 30720,
+        "changed": 8832,
+        "change": -21888
+      },
+      "netMarginPct": {
+        "base": 32,
+        "changed": 15.33,
+        "change": -16.67
+      },
+      "roiPct": {
+        "base": 207.2,
+        "changed": -11.68,
+        "change": -218.88
+      },
+      "paybackMonth": {
+        "base": 4,
+        "changed": null,
+        "change": null
+      },
+      "peakFundingNeed": {
+        "base": 10000,
+        "changed": 10000,
+        "change": 0
+      },
+      "breakEvenUnitsPerMonth": {
+        "base": 175.44,
+        "changed": 175.44,
+        "change": 0
+      }
+    },
+    "before": {
+      "recommendation": "Postpone",
+      "overall": 5.1
+    },
+    "after": {
+      "recommendation": "Postpone",
+      "overall": 4.7,
+      "conditions": [
+        "Pessimistic scenario loses money: set a stop-loss and a review point before committing more capital.",
+        "Obtain at least 3 written manufacturer quotations",
+        "Pre-sell or waitlist at least 50 units before the first production run",
+        "Register the brand in the first target market"
+      ],
+      "caps": [
+        "Financial criterion capped at 4 (no payback in expected scenario)"
+      ]
+    },
+    "changed": {
+      "ok": true,
+      "inputs": {
+        "initialInvestment": 10000,
+        "price": 20,
+        "unitsPerMonth": 240,
+        "unitVariableCost": 8,
+        "availableCapital": 10000,
+        "marketingMonthly": 1500,
+        "fixedMonthly": 500,
+        "taxRatePct": 0,
+        "feesPct": 3,
+        "growthPctMonthly": 0,
+        "months": 12
+      },
+      "assumptions": [],
+      "scenarioAssumptions": {
+        "optimistic": {
+          "units": 1.25,
+          "price": 1,
+          "varCost": 0.9,
+          "marketing": 1,
+          "fixed": 1,
+          "growthDeltaPct": 0
+        },
+        "expected": {
+          "units": 1,
+          "price": 1,
+          "varCost": 1,
+          "marketing": 1,
+          "fixed": 1,
+          "growthDeltaPct": 0
+        },
+        "pessimistic": {
+          "units": 0.6,
+          "price": 1,
+          "varCost": 1.2,
+          "marketing": 1,
+          "fixed": 1.1,
+          "growthDeltaPct": 0
+        }
+      },
+      "scenarioNote": "Optimistic and pessimistic scenarios use default stress multipliers that are assumptions, not research findings.",
+      "limitations": [
+        "No working-capital or inventory-timing model: stock bought before sales is not modelled, so early cash need is understated for product businesses.",
+        "Tax is applied to positive monthly operating profit only; losses are not carried forward.",
+        "Units grow at a constant monthly rate; no seasonality, no churn, no price changes over time.",
+        "Currency conversion, shipping, duties and returns must already be inside the unit cost or fixed costs."
+      ],
+      "scenarios": {
+        "optimistic": {
+          "totals": {
+            "revenue": 72000,
+            "cogs": 25920,
+            "gross": 46080,
+            "fees": 2160,
+            "marketing": 18000,
+            "fixed": 6000,
+            "operating": 19920,
+            "tax": 0,
+            "net": 19920
+          },
+          "metrics": {
+            "grossRevenue": 72000,
+            "costOfGoodsSold": 25920,
+            "grossProfit": 46080,
+            "operatingProfit": 19920,
+            "netProfit": 19920,
+            "grossMarginPct": 64,
+            "netMarginPct": 27.67,
+            "breakEvenUnitsPerMonth": 163.93,
+            "roiPct": 99.2,
+            "paybackMonth": 7,
+            "peakFundingNeed": 10000,
+            "cashSufficient": true,
+            "firstNegativeCashMonth": null
+          },
+          "monthly": [
+            {
+              "month": 1,
+              "units": 300,
+              "revenue": 6000,
+              "cogs": 2160,
+              "grossProfit": 3840,
+              "operatingProfit": 1660,
+              "tax": 0,
+              "netProfit": 1660,
+              "cumulativeCash": -8340
+            },
+            {
+              "month": 2,
+              "units": 300,
+              "revenue": 6000,
+              "cogs": 2160,
+              "grossProfit": 3840,
+              "operatingProfit": 1660,
+              "tax": 0,
+              "netProfit": 1660,
+              "cumulativeCash": -6680
+            },
+            {
+              "month": 3,
+              "units": 300,
+              "revenue": 6000,
+              "cogs": 2160,
+              "grossProfit": 3840,
+              "operatingProfit": 1660,
+              "tax": 0,
+              "netProfit": 1660,
+              "cumulativeCash": -5020
+            },
+            {
+              "month": 4,
+              "units": 300,
+              "revenue": 6000,
+              "cogs": 2160,
+              "grossProfit": 3840,
+              "operatingProfit": 1660,
+              "tax": 0,
+              "netProfit": 1660,
+              "cumulativeCash": -3360
+            },
+            {
+              "month": 5,
+              "units": 300,
+              "revenue": 6000,
+              "cogs": 2160,
+              "grossProfit": 3840,
+              "operatingProfit": 1660,
+              "tax": 0,
+              "netProfit": 1660,
+              "cumulativeCash": -1700
+            },
+            {
+              "month": 6,
+              "units": 300,
+              "revenue": 6000,
+              "cogs": 2160,
+              "grossProfit": 3840,
+              "operatingProfit": 1660,
+              "tax": 0,
+              "netProfit": 1660,
+              "cumulativeCash": -40
+            },
+            {
+              "month": 7,
+              "units": 300,
+              "revenue": 6000,
+              "cogs": 2160,
+              "grossProfit": 3840,
+              "operatingProfit": 1660,
+              "tax": 0,
+              "netProfit": 1660,
+              "cumulativeCash": 1620
+            },
+            {
+              "month": 8,
+              "units": 300,
+              "revenue": 6000,
+              "cogs": 2160,
+              "grossProfit": 3840,
+              "operatingProfit": 1660,
+              "tax": 0,
+              "netProfit": 1660,
+              "cumulativeCash": 3280
+            },
+            {
+              "month": 9,
+              "units": 300,
+              "revenue": 6000,
+              "cogs": 2160,
+              "grossProfit": 3840,
+              "operatingProfit": 1660,
+              "tax": 0,
+              "netProfit": 1660,
+              "cumulativeCash": 4940
+            },
+            {
+              "month": 10,
+              "units": 300,
+              "revenue": 6000,
+              "cogs": 2160,
+              "grossProfit": 3840,
+              "operatingProfit": 1660,
+              "tax": 0,
+              "netProfit": 1660,
+              "cumulativeCash": 6600
+            },
+            {
+              "month": 11,
+              "units": 300,
+              "revenue": 6000,
+              "cogs": 2160,
+              "grossProfit": 3840,
+              "operatingProfit": 1660,
+              "tax": 0,
+              "netProfit": 1660,
+              "cumulativeCash": 8260
+            },
+            {
+              "month": 12,
+              "units": 300,
+              "revenue": 6000,
+              "cogs": 2160,
+              "grossProfit": 3840,
+              "operatingProfit": 1660,
+              "tax": 0,
+              "netProfit": 1660,
+              "cumulativeCash": 9920
+            }
+          ]
+        },
+        "expected": {
+          "totals": {
+            "revenue": 57600,
+            "cogs": 23040,
+            "gross": 34560,
+            "fees": 1728,
+            "marketing": 18000,
+            "fixed": 6000,
+            "operating": 8832,
+            "tax": 0,
+            "net": 8832
+          },
+          "metrics": {
+            "grossRevenue": 57600,
+            "costOfGoodsSold": 23040,
+            "grossProfit": 34560,
+            "operatingProfit": 8832,
+            "netProfit": 8832,
+            "grossMarginPct": 60,
+            "netMarginPct": 15.33,
+            "breakEvenUnitsPerMonth": 175.44,
+            "roiPct": -11.68,
+            "paybackMonth": null,
+            "peakFundingNeed": 10000,
+            "cashSufficient": true,
+            "firstNegativeCashMonth": null
+          },
+          "monthly": [
+            {
+              "month": 1,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 1920,
+              "grossProfit": 2880,
+              "operatingProfit": 736,
+              "tax": 0,
+              "netProfit": 736,
+              "cumulativeCash": -9264
+            },
+            {
+              "month": 2,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 1920,
+              "grossProfit": 2880,
+              "operatingProfit": 736,
+              "tax": 0,
+              "netProfit": 736,
+              "cumulativeCash": -8528
+            },
+            {
+              "month": 3,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 1920,
+              "grossProfit": 2880,
+              "operatingProfit": 736,
+              "tax": 0,
+              "netProfit": 736,
+              "cumulativeCash": -7792
+            },
+            {
+              "month": 4,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 1920,
+              "grossProfit": 2880,
+              "operatingProfit": 736,
+              "tax": 0,
+              "netProfit": 736,
+              "cumulativeCash": -7056
+            },
+            {
+              "month": 5,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 1920,
+              "grossProfit": 2880,
+              "operatingProfit": 736,
+              "tax": 0,
+              "netProfit": 736,
+              "cumulativeCash": -6320
+            },
+            {
+              "month": 6,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 1920,
+              "grossProfit": 2880,
+              "operatingProfit": 736,
+              "tax": 0,
+              "netProfit": 736,
+              "cumulativeCash": -5584
+            },
+            {
+              "month": 7,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 1920,
+              "grossProfit": 2880,
+              "operatingProfit": 736,
+              "tax": 0,
+              "netProfit": 736,
+              "cumulativeCash": -4848
+            },
+            {
+              "month": 8,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 1920,
+              "grossProfit": 2880,
+              "operatingProfit": 736,
+              "tax": 0,
+              "netProfit": 736,
+              "cumulativeCash": -4112
+            },
+            {
+              "month": 9,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 1920,
+              "grossProfit": 2880,
+              "operatingProfit": 736,
+              "tax": 0,
+              "netProfit": 736,
+              "cumulativeCash": -3376
+            },
+            {
+              "month": 10,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 1920,
+              "grossProfit": 2880,
+              "operatingProfit": 736,
+              "tax": 0,
+              "netProfit": 736,
+              "cumulativeCash": -2640
+            },
+            {
+              "month": 11,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 1920,
+              "grossProfit": 2880,
+              "operatingProfit": 736,
+              "tax": 0,
+              "netProfit": 736,
+              "cumulativeCash": -1904
+            },
+            {
+              "month": 12,
+              "units": 240,
+              "revenue": 4800,
+              "cogs": 1920,
+              "grossProfit": 2880,
+              "operatingProfit": 736,
+              "tax": 0,
+              "netProfit": 736,
+              "cumulativeCash": -1168
+            }
+          ]
+        },
+        "pessimistic": {
+          "totals": {
+            "revenue": 34560,
+            "cogs": 16588.8,
+            "gross": 17971.2,
+            "fees": 1036.8,
+            "marketing": 18000,
+            "fixed": 6600,
+            "operating": -7665.6,
+            "tax": 0,
+            "net": -7665.6
+          },
+          "metrics": {
+            "grossRevenue": 34560,
+            "costOfGoodsSold": 16588.8,
+            "grossProfit": 17971.2,
+            "operatingProfit": -7665.6,
+            "netProfit": -7665.6,
+            "grossMarginPct": 52,
+            "netMarginPct": -22.18,
+            "breakEvenUnitsPerMonth": 209.18,
+            "roiPct": -176.66,
+            "paybackMonth": null,
+            "peakFundingNeed": 17665.6,
+            "cashSufficient": false,
+            "firstNegativeCashMonth": 1
+          },
+          "monthly": [
+            {
+              "month": 1,
+              "units": 144,
+              "revenue": 2880,
+              "cogs": 1382.4,
+              "grossProfit": 1497.6,
+              "operatingProfit": -638.8,
+              "tax": 0,
+              "netProfit": -638.8,
+              "cumulativeCash": -10638.8
+            },
+            {
+              "month": 2,
+              "units": 144,
+              "revenue": 2880,
+              "cogs": 1382.4,
+              "grossProfit": 1497.6,
+              "operatingProfit": -638.8,
+              "tax": 0,
+              "netProfit": -638.8,
+              "cumulativeCash": -11277.6
+            },
+            {
+              "month": 3,
+              "units": 144,
+              "revenue": 2880,
+              "cogs": 1382.4,
+              "grossProfit": 1497.6,
+              "operatingProfit": -638.8,
+              "tax": 0,
+              "netProfit": -638.8,
+              "cumulativeCash": -11916.4
+            },
+            {
+              "month": 4,
+              "units": 144,
+              "revenue": 2880,
+              "cogs": 1382.4,
+              "grossProfit": 1497.6,
+              "operatingProfit": -638.8,
+              "tax": 0,
+              "netProfit": -638.8,
+              "cumulativeCash": -12555.2
+            },
+            {
+              "month": 5,
+              "units": 144,
+              "revenue": 2880,
+              "cogs": 1382.4,
+              "grossProfit": 1497.6,
+              "operatingProfit": -638.8,
+              "tax": 0,
+              "netProfit": -638.8,
+              "cumulativeCash": -13194
+            },
+            {
+              "month": 6,
+              "units": 144,
+              "revenue": 2880,
+              "cogs": 1382.4,
+              "grossProfit": 1497.6,
+              "operatingProfit": -638.8,
+              "tax": 0,
+              "netProfit": -638.8,
+              "cumulativeCash": -13832.8
+            },
+            {
+              "month": 7,
+              "units": 144,
+              "revenue": 2880,
+              "cogs": 1382.4,
+              "grossProfit": 1497.6,
+              "operatingProfit": -638.8,
+              "tax": 0,
+              "netProfit": -638.8,
+              "cumulativeCash": -14471.6
+            },
+            {
+              "month": 8,
+              "units": 144,
+              "revenue": 2880,
+              "cogs": 1382.4,
+              "grossProfit": 1497.6,
+              "operatingProfit": -638.8,
+              "tax": 0,
+              "netProfit": -638.8,
+              "cumulativeCash": -15110.4
+            },
+            {
+              "month": 9,
+              "units": 144,
+              "revenue": 2880,
+              "cogs": 1382.4,
+              "grossProfit": 1497.6,
+              "operatingProfit": -638.8,
+              "tax": 0,
+              "netProfit": -638.8,
+              "cumulativeCash": -15749.2
+            },
+            {
+              "month": 10,
+              "units": 144,
+              "revenue": 2880,
+              "cogs": 1382.4,
+              "grossProfit": 1497.6,
+              "operatingProfit": -638.8,
+              "tax": 0,
+              "netProfit": -638.8,
+              "cumulativeCash": -16388
+            },
+            {
+              "month": 11,
+              "units": 144,
+              "revenue": 2880,
+              "cogs": 1382.4,
+              "grossProfit": 1497.6,
+              "operatingProfit": -638.8,
+              "tax": 0,
+              "netProfit": -638.8,
+              "cumulativeCash": -17026.8
+            },
+            {
+              "month": 12,
+              "units": 144,
+              "revenue": 2880,
+              "cogs": 1382.4,
+              "grossProfit": 1497.6,
+              "operatingProfit": -638.8,
+              "tax": 0,
+              "netProfit": -638.8,
+              "cumulativeCash": -17665.6
+            }
+          ]
+        }
+      }
+    },
+    "ts": 1794250704495
   }
 ]

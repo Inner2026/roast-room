@@ -1,14 +1,199 @@
 {
   "board": "ask",
-  "default": ["allocator", "architect", "growth", "operator", "contrarian", "advocate", "strategist"],
-  "quick": ["allocator", "architect", "operator", "contrarian"],
+  "default": [
+    "allocator",
+    "architect",
+    "growth",
+    "operator",
+    "contrarian",
+    "advocate",
+    "strategist"
+  ],
+  "quick": [
+    "allocator",
+    "architect",
+    "operator",
+    "contrarian"
+  ],
   "seats": [
-    { "id": "allocator",  "name": "The Capital Allocator", "pillar": "Money and ruin risk",      "color": "#e8b04a", "agent": "allocator" },
-    { "id": "architect",  "name": "The Offer Architect",   "pillar": "Pricing and offer design", "color": "#e8674a", "agent": "architect" },
-    { "id": "growth",     "name": "The Growth Hacker",     "pillar": "Distribution and demand",  "color": "#4ac0e8", "agent": "growth" },
-    { "id": "operator",   "name": "The Operator",          "pillar": "Execution and capacity",   "color": "#7be84a", "agent": "operator" },
-    { "id": "contrarian", "name": "The Contrarian",        "pillar": "What could be wrong",      "color": "#b04ae8", "agent": "contrarian" },
-    { "id": "advocate",   "name": "The Customer Advocate", "pillar": "Customers and retention",  "color": "#e84a9a", "agent": "advocate" },
-    { "id": "strategist", "name": "The Long-Game Strategist", "pillar": "Brand and long-term position", "color": "#4ae8b0", "agent": "strategist" }
+    {
+      "id": "allocator",
+      "name": "The Capital Allocator",
+      "pillar": "Money and ruin risk",
+      "color": "#e8b04a",
+      "agent": "allocator",
+      "kind": "advisor",
+      "criteria": [
+        "financial",
+        "risk"
+      ]
+    },
+    {
+      "id": "architect",
+      "name": "The Offer Architect",
+      "pillar": "Pricing and offer design",
+      "color": "#e8674a",
+      "agent": "architect",
+      "kind": "advisor",
+      "criteria": [
+        "financial",
+        "market"
+      ]
+    },
+    {
+      "id": "growth",
+      "name": "The Growth Hacker",
+      "pillar": "Distribution and demand",
+      "color": "#4ac0e8",
+      "agent": "growth",
+      "kind": "advisor",
+      "criteria": [
+        "market"
+      ]
+    },
+    {
+      "id": "operator",
+      "name": "The Operator",
+      "pillar": "Execution and capacity",
+      "color": "#7be84a",
+      "agent": "operator",
+      "kind": "advisor",
+      "criteria": [
+        "operational"
+      ]
+    },
+    {
+      "id": "contrarian",
+      "name": "The Contrarian",
+      "pillar": "What could be wrong",
+      "color": "#b04ae8",
+      "agent": "contrarian",
+      "kind": "advisor",
+      "criteria": [
+        "risk"
+      ]
+    },
+    {
+      "id": "advocate",
+      "name": "The Customer Advocate",
+      "pillar": "Customers and retention",
+      "color": "#e84a9a",
+      "agent": "advocate",
+      "kind": "advisor",
+      "criteria": [
+        "market",
+        "strategic"
+      ]
+    },
+    {
+      "id": "strategist",
+      "name": "The Long-Game Strategist",
+      "pillar": "Brand and long-term position",
+      "color": "#4ae8b0",
+      "agent": "strategist",
+      "kind": "advisor",
+      "criteria": [
+        "strategic"
+      ]
+    },
+    {
+      "id": "fin",
+      "name": "The Financial Department",
+      "pillar": "Forecasting, cash flow, ROI, break-even, capital, margins",
+      "color": "#d4af37",
+      "agent": "fin",
+      "kind": "department",
+      "criteria": [
+        "financial"
+      ]
+    },
+    {
+      "id": "legal",
+      "name": "Legal and Compliance Department",
+      "pillar": "Contracts, structure, regulation, IP, liability",
+      "color": "#8f9bd6",
+      "agent": "legal",
+      "kind": "department",
+      "criteria": [
+        "legal",
+        "risk"
+      ]
+    },
+    {
+      "id": "trade",
+      "name": "International Trade Department",
+      "pillar": "Import/export, suppliers, customs, logistics, restrictions",
+      "color": "#5fb3a8",
+      "agent": "trade",
+      "kind": "department",
+      "criteria": [
+        "operational",
+        "market"
+      ]
+    },
+    {
+      "id": "market",
+      "name": "Market Intelligence Department",
+      "pillar": "Demand, competitors, pricing, customers, entry",
+      "color": "#e08a5f",
+      "agent": "market",
+      "kind": "department",
+      "criteria": [
+        "market"
+      ]
+    },
+    {
+      "id": "tech",
+      "name": "Technology and Innovation Department",
+      "pillar": "AI, automation, software, digital transformation, efficiency",
+      "color": "#6fa8dc",
+      "agent": "tech",
+      "kind": "department",
+      "criteria": [
+        "operational",
+        "strategic"
+      ]
+    },
+    {
+      "id": "riskmgr",
+      "name": "Risk Management Department",
+      "pillar": "Operational, financial, market, supplier, reputational, continuity",
+      "color": "#c0504d",
+      "agent": "riskmgr",
+      "kind": "department",
+      "criteria": [
+        "risk"
+      ]
+    },
+    {
+      "id": "procure",
+      "name": "Negotiation and Procurement Department",
+      "pillar": "Suppliers, RFQ/RFP, contract terms, savings",
+      "color": "#9bbb59",
+      "agent": "procure",
+      "kind": "department",
+      "criteria": [
+        "operational",
+        "financial"
+      ]
+    },
+    {
+      "id": "devil",
+      "name": "The Devil's Advocate",
+      "pillar": "Why this will fail",
+      "color": "#ff4d4d",
+      "agent": "devil",
+      "kind": "devil",
+      "criteria": []
+    },
+    {
+      "id": "researcher",
+      "name": "The Research Agent",
+      "pillar": "Verified market research",
+      "color": "#aaaaaa",
+      "agent": "researcher",
+      "kind": "researcher",
+      "criteria": []
+    }
   ]
 }

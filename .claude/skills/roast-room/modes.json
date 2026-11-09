@@ -1,0 +1,150 @@
+{
+  "modes": {
+    "startup": {
+      "label": "Startup Validation",
+      "seats": [
+        "fin",
+        "market",
+        "riskmgr",
+        "operator",
+        "legal",
+        "architect",
+        "growth",
+        "devil"
+      ],
+      "weights": {
+        "financial": 25,
+        "market": 25,
+        "operational": 15,
+        "risk": 20,
+        "strategic": 5,
+        "legal": 10
+      }
+    },
+    "investment": {
+      "label": "Investment",
+      "seats": [
+        "fin",
+        "riskmgr",
+        "allocator",
+        "market",
+        "legal",
+        "strategist",
+        "devil"
+      ],
+      "weights": {
+        "financial": 35,
+        "market": 15,
+        "operational": 5,
+        "risk": 25,
+        "strategic": 10,
+        "legal": 10
+      }
+    },
+    "acquisition": {
+      "label": "Business Acquisition",
+      "seats": [
+        "fin",
+        "legal",
+        "riskmgr",
+        "operator",
+        "market",
+        "allocator",
+        "procure",
+        "devil"
+      ],
+      "weights": {
+        "financial": 30,
+        "market": 10,
+        "operational": 15,
+        "risk": 20,
+        "strategic": 5,
+        "legal": 20
+      }
+    },
+    "expansion": {
+      "label": "Market Expansion",
+      "seats": [
+        "market",
+        "trade",
+        "legal",
+        "fin",
+        "operator",
+        "growth",
+        "riskmgr",
+        "devil"
+      ],
+      "weights": {
+        "financial": 20,
+        "market": 25,
+        "operational": 15,
+        "risk": 15,
+        "strategic": 10,
+        "legal": 15
+      }
+    },
+    "supplier": {
+      "label": "Supplier Evaluation",
+      "seats": [
+        "procure",
+        "trade",
+        "fin",
+        "riskmgr",
+        "legal",
+        "operator",
+        "devil"
+      ],
+      "weights": {
+        "financial": 25,
+        "market": 0,
+        "operational": 30,
+        "risk": 20,
+        "strategic": 5,
+        "legal": 15
+      }
+    },
+    "rescue": {
+      "label": "Business Rescue",
+      "seats": [
+        "fin",
+        "operator",
+        "market",
+        "advocate",
+        "procure",
+        "riskmgr",
+        "strategist",
+        "devil"
+      ],
+      "weights": {
+        "financial": 30,
+        "market": 20,
+        "operational": 20,
+        "risk": 15,
+        "strategic": 10,
+        "legal": 5
+      }
+    },
+    "strategic": {
+      "label": "Strategic Decision",
+      "seats": [
+        "allocator",
+        "architect",
+        "growth",
+        "operator",
+        "strategist",
+        "fin",
+        "riskmgr",
+        "devil"
+      ],
+      "weights": {
+        "financial": 25,
+        "market": 20,
+        "operational": 15,
+        "risk": 20,
+        "strategic": 15,
+        "legal": 5
+      }
+    }
+  },
+  "note": "A mode seats a set of advisors and may override criterion weights. The Devil's Advocate is seated in every mode. Weights are editable."
+}

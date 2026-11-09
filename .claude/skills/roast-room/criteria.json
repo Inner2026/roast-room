@@ -1,0 +1,12 @@
+{
+  "criteria": {
+    "financial":   { "label": "Financial viability",     "weight": 25 },
+    "market":      { "label": "Market attractiveness",   "weight": 20 },
+    "operational": { "label": "Operational feasibility", "weight": 15 },
+    "risk":        { "label": "Risk exposure (10 = low risk)", "weight": 20 },
+    "strategic":   { "label": "Strategic fit",           "weight": 10 },
+    "legal":       { "label": "Legal and compliance",    "weight": 10 }
+  },
+  "thresholds": { "proceed": 7.0, "conditional": 5.5, "postpone": 4.0 },
+  "notes": "Weights are relative and are re-normalised over the criteria the board actually scored. Modes in modes.json may override them. Thresholds map the overall 0-10 score to Proceed / Proceed Conditionally / Postpone / Reject before caps are applied."
+}

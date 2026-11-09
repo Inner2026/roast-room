@@ -77,10 +77,10 @@ class Doc {
   }
   bar(label, value, max = 10, color = [0.91, 0.4, 0.29]) {
     this.ensure(18);
-    const bw = 220;
+    const bw = 190;
     this.y -= 14;
-    this.cur.push(`BT /F1 9.5 Tf 0.1 0.1 0.12 rg ${MARGIN} ${this.y.toFixed(2)} Td (${esc(clean(label).slice(0, 34))}) Tj ET`);
-    const x = MARGIN + 200;
+    this.cur.push(`BT /F1 9.5 Tf 0.1 0.1 0.12 rg ${MARGIN} ${this.y.toFixed(2)} Td (${esc(clean(label).slice(0, 46))}) Tj ET`);
+    const x = MARGIN + 235;
     this.cur.push(`0.92 0.92 0.94 rg ${x} ${(this.y - 1).toFixed(2)} ${bw} 9 re f`);
     this.cur.push(`${color.join(' ')} rg ${x} ${(this.y - 1).toFixed(2)} ${((bw * Math.max(0, value)) / max).toFixed(2)} 9 re f`);
     this.cur.push(`BT /F2 9.5 Tf 0.1 0.1 0.12 rg ${x + bw + 8} ${this.y.toFixed(2)} Td (${value.toFixed(1)}) Tj ET`);
@@ -120,64 +120,161 @@ class Doc {
 }
 
 function buildReport(session, roster) {
-  const { computeRanking, computeConfidence } = require('./scoring');
+  const { computeRanking } = require('./scoring');
   const evs = session.events || [];
   const start = evs.find((e) => e.type === 'start') || {};
   const verdict = evs.filter((e) => e.type === 'verdict').pop();
+  const research = evs.filter((e) => e.type === 'research').pop();
+  const finEv = evs.filter((e) => e.type === 'finance').pop();
+  const fin = finEv && finEv.result && finEv.result.ok ? finEv.result : null;
+  const objections = evs.filter((e) => e.type === 'objection');
+  const whatifs = evs.filter((e) => e.type === 'whatif');
   const scoreEvs = evs.filter((e) => e.type === 'scores');
   const seatName = (id) => (roster.find((s) => s.id === id) || {}).name || id;
+  const HOT = [0.91, 0.4, 0.29];
+  const MUTE = [0.4, 0.4, 0.45];
+  const money = (n) => (n == null ? 'n/a' : Number(n).toLocaleString('en-US', { maximumFractionDigits: 0 }));
+  const h = (t) => { d.space(6); d.text(t, { size: 9, bold: true, color: HOT, gap: 3 }); };
+  const list = (arr) => (arr || []).forEach((x, i) => d.text(`${i + 1}. ${x}`, { indent: 6 }));
   const d = new Doc();
 
-  d.text('THE ROAST ROOM', { size: 9, bold: true, color: [0.91, 0.4, 0.29], gap: 2 });
-  d.text('Council verdict', { size: 24, bold: true, gap: 8 });
-  d.text(start.decision || 'Decision', { size: 12, gap: 6 });
-  d.text(`Session ${session.id}`, { size: 8.5, color: [0.5, 0.5, 0.55] });
+  // 1. Executive summary
+  d.text('THE ROAST ROOM  |  EXECUTIVE BOARD REPORT', { size: 9, bold: true, color: HOT, gap: 2 });
+  d.text('Board verdict', { size: 24, bold: true, gap: 8 });
+  d.text(start.decision || 'Decision', { size: 12, gap: 4 });
+  d.text(`Session ${session.id}${start.mode ? '  |  Mode: ' + start.mode : ''}`, { size: 8.5, color: [0.5, 0.5, 0.55] });
   d.rule();
+  h('EXECUTIVE SUMMARY');
+  if (verdict) {
+    d.text(verdict.recommendation || verdict.winner || 'n/a', { size: 18, bold: true, gap: 2 });
+    if (typeof verdict.overall === 'number') d.text(`Weighted overall score ${verdict.overall}/10`, { size: 10.5, gap: 2 });
+    if (verdict.confidence && typeof verdict.confidence === 'object') d.text(`Board confidence ${verdict.confidence.score}% (subjective, not a calibrated probability)`, { size: 10, color: MUTE, gap: 6 });
+    if (verdict.summary) d.text(verdict.summary, { size: 11, gap: 8 });
+  } else d.text('No verdict has been issued for this session yet.', { gap: 8 });
 
-  const ranking = (verdict && verdict.ranking && verdict.ranking.length) ? verdict.ranking : computeRanking(start.options || [], scoreEvs);
-  const winner = (verdict && verdict.winner) || (ranking[0] && ranking[0].option) || 'n/a';
-  const conf = verdict && typeof verdict.confidence === 'number' ? verdict.confidence : computeConfidence(ranking, scoreEvs, false);
+  // 2. Business proposal
+  h('BUSINESS PROPOSAL');
+  d.text(start.decision || 'n/a', { gap: 2 });
+  if (start.options && start.options.length) d.text('Options considered: ' + start.options.join('  |  '), { size: 10, color: MUTE, gap: 6 });
 
-  d.text('VERDICT', { size: 9, bold: true, color: [0.91, 0.4, 0.29], gap: 2 });
-  d.text(winner, { size: 18, bold: true, gap: 2 });
-  d.text(`Confidence ${conf}%${verdict && verdict.capped ? '  |  an option was capped for ruin risk' : ''}`, { size: 10, color: [0.4, 0.4, 0.45], gap: 8 });
-  if (verdict && verdict.summary) d.text(verdict.summary, { size: 11, gap: 8 });
-
-  d.text('SCOREBOARD', { size: 9, bold: true, color: [0.91, 0.4, 0.29], gap: 4 });
-  ranking.forEach((r) => d.bar(r.option + (r.capped ? ' (capped)' : ''), r.score));
-  d.space(8);
-
-  if (verdict && verdict.risks && verdict.risks.length) {
-    d.text('TOP RISKS', { size: 9, bold: true, color: [0.91, 0.4, 0.29], gap: 3 });
-    verdict.risks.forEach((r, i) => d.text(`${i + 1}. ${r}`, { indent: 6 }));
-    d.space(4);
-  }
-  if (verdict && verdict.next_steps && verdict.next_steps.length) {
-    d.text('NEXT STEPS', { size: 9, bold: true, color: [0.91, 0.4, 0.29], gap: 3 });
-    verdict.next_steps.forEach((r, i) => d.text(`${i + 1}. ${r}`, { indent: 6 }));
-    d.space(4);
-  }
-
+  // 3. Research findings
   d.rule();
-  d.text('HOW EACH SEAT SCORED', { size: 9, bold: true, color: [0.91, 0.4, 0.29], gap: 4 });
+  h('RESEARCH FINDINGS');
+  if (research) {
+    if (research.summary) d.text(research.summary, { gap: 6 });
+    (research.claims || []).forEach((c) => {
+      d.text(`[${String(c.status || 'unclassified').toUpperCase()}] ${c.text}`, { size: 9.5, bold: false, indent: 6, gap: 0 });
+      if (c.source || c.date) d.text(`${c.source || ''}${c.date ? '  |  ' + c.date : ''}`, { size: 8.5, color: MUTE, indent: 14, gap: 3 });
+    });
+    if (research.gaps && research.gaps.length) { d.text('Information not found:', { bold: true, size: 10, gap: 1 }); list(research.gaps); }
+  } else d.text('No research brief was produced for this session. Findings below rest on user inputs and assumptions only.', { color: MUTE });
+
+  // 4. Financial analysis
+  d.rule();
+  h('FINANCIAL ANALYSIS');
+  if (fin) {
+    const rows = [['Metric', 'Optimistic', 'Expected', 'Pessimistic']];
+    const m = (n) => fin.scenarios[n].metrics;
+    const row = (label, k, f = money) => rows.push([label, f(m('optimistic')[k]), f(m('expected')[k]), f(m('pessimistic')[k])]);
+    const pct = (n) => (n == null ? 'n/a' : n + '%');
+    const mo = (n) => (n == null ? 'never' : 'month ' + n);
+    row('Gross revenue', 'grossRevenue'); row('Cost of goods sold', 'costOfGoodsSold'); row('Gross profit', 'grossProfit');
+    row('Operating profit', 'operatingProfit'); row('Net profit', 'netProfit');
+    row('Gross margin', 'grossMarginPct', pct); row('Net margin', 'netMarginPct', pct); row('ROI over horizon', 'roiPct', pct);
+    row('Break-even units / month', 'breakEvenUnitsPerMonth'); row('Capital recovered', 'paybackMonth', mo); row('Peak funding need', 'peakFundingNeed');
+    rows.forEach((r, i) => {
+      d.ensure(14);
+      d.y -= 13;
+      const xs = [MARGIN, MARGIN + 175, MARGIN + 275, MARGIN + 375];
+      r.forEach((cell, c) => d.cur.push(`BT /${i === 0 ? 'F2' : 'F1'} 9.5 Tf 0.1 0.1 0.12 rg ${xs[c]} ${d.y.toFixed(2)} Td (${esc(clean(cell))}) Tj ET`));
+      d.y -= 2;
+    });
+    d.space(6);
+    d.text(`Horizon ${fin.inputs.months} months. Amounts in the user's currency.`, { size: 9, color: MUTE, gap: 3 });
+    d.text('Financial assumptions', { bold: true, size: 10, gap: 1 });
+    list(fin.assumptions.length ? fin.assumptions : ['All optional inputs were supplied by the user.']);
+    d.text(fin.scenarioNote, { size: 9, color: MUTE, gap: 3 });
+    d.text('Model limitations', { bold: true, size: 10, gap: 1 });
+    list(fin.limitations);
+  } else d.text('No financial model was run for this session.', { color: MUTE });
+
+  // 5. Risk matrix (criterion scores) and verdict reasoning
+  d.rule();
+  h('SCOREBOARD AND CRITERIA');
+  if (verdict && Array.isArray(verdict.criteria)) {
+    verdict.criteria.forEach((c) => (c.score == null ? d.text(`${c.label}: not assessed`, { size: 9.5, color: MUTE, gap: 2 }) : d.bar(`${c.label} (w${c.weight})`, c.score)));
+    d.space(4);
+  } else {
+    const ranking = verdict && verdict.ranking && verdict.ranking.length ? verdict.ranking : computeRanking(start.options || [], scoreEvs);
+    ranking.forEach((r) => d.bar(r.option + (r.capped ? ' (capped)' : ''), r.score));
+  }
+  if (verdict && verdict.ranking && verdict.ranking.length && Array.isArray(verdict.criteria)) { d.text('Option ranking', { bold: true, size: 10, gap: 1 }); verdict.ranking.forEach((r) => d.bar(r.option + (r.capped ? ' (capped)' : ''), r.score)); }
+
+  if (verdict) {
+    if (verdict.reasoning && verdict.reasoning.length) { h('HOW THE BOARD REACHED ITS CONCLUSION'); list(verdict.reasoning); }
+    if (verdict.caps && verdict.caps.length) { d.text('Caps applied', { bold: true, size: 10, gap: 1 }); list(verdict.caps); }
+    if (verdict.strengths && verdict.strengths.length) { h('MAIN COMPETITIVE ADVANTAGES'); list(verdict.strengths); }
+    if (verdict.weaknesses && verdict.weaknesses.length) { h('CRITICAL WEAKNESSES'); list(verdict.weaknesses); }
+    if (verdict.risks && verdict.risks.length) { h('TOP RISKS'); list(verdict.risks); }
+    if (verdict.disagreements && verdict.disagreements.length) { h('MAIN DISAGREEMENTS BETWEEN ADVISORS'); list(verdict.disagreements); }
+  }
+
+  // 6. Devil's Advocate
+  d.rule();
+  h("DEVIL'S ADVOCATE");
+  if (objections.length) {
+    objections.forEach((o) => {
+      d.text(`Formal objection (${o.severity || 'unrated'})`, { bold: true, size: 10.5, color: [0.75, 0.2, 0.2], gap: 1 });
+      d.text(o.text, { gap: 3 });
+      if (o.conditions && o.conditions.length) { d.text('To withdraw this objection:', { size: 9.5, bold: true, gap: 1 }); list(o.conditions); }
+      if (o.alternatives && o.alternatives.length) { d.text('Alternatives suggested:', { size: 9.5, bold: true, gap: 1 }); list(o.alternatives); }
+    });
+  } else d.text('No formal objection was recorded.', { color: MUTE });
+  if (verdict && verdict.alternatives && verdict.alternatives.length) { d.text('Alternative strategies', { bold: true, size: 10, gap: 1 }); list(verdict.alternatives); }
+
+  // 7. Conditions and next steps
+  if (verdict && verdict.conditions && verdict.conditions.length) { d.rule(); h('REQUIRED CONDITIONS BEFORE IMPLEMENTATION'); list(verdict.conditions); }
+  if (verdict && verdict.next_steps && verdict.next_steps.length) { h('NEXT STEPS'); list(verdict.next_steps); }
+
+  // 8. What-if scenarios
+  if (whatifs.length) {
+    d.rule();
+    h('WHAT-IF SCENARIOS');
+    whatifs.forEach((w) => {
+      d.text(w.label || 'What-if', { bold: true, gap: 1 });
+      d.text((w.applied || []).map((a) => `${a.field}: ${a.from} to ${a.to}`).join('; '), { size: 9, color: MUTE, gap: 1 });
+      const np = w.delta && w.delta.netProfit;
+      if (np) d.text(`Expected net profit ${money(np.base)} to ${money(np.changed)}. Recommendation: ${w.before.recommendation} (${w.before.overall}) to ${w.after.recommendation} (${w.after.overall}).`, { size: 10, gap: 5 });
+    });
+  }
+
+  // 9. Seat evaluations
+  d.rule();
+  h('ADVISOR EVALUATIONS');
   scoreEvs.forEach((e) => {
-    const sc = Object.entries(e.scores || {}).map(([k, v]) => `${k}: ${v}`).join('  |  ');
+    const cs = Object.entries(e.criteria || {}).map(([k, v]) => `${k}: ${v}`).join('  |  ');
+    const os = Object.entries(e.scores || {}).map(([k, v]) => `${k}: ${v}`).join('  |  ');
     d.text(`${seatName(e.seat)}  (weight ${e.weight}${e.ruin ? ', RUIN FLAG' : ''})`, { bold: true, size: 10.5, gap: 1 });
-    d.text(sc, { size: 9.5, color: [0.35, 0.35, 0.4], gap: 1 });
+    if (cs) d.text(cs, { size: 9.5, color: MUTE, gap: 1 });
+    if (os) d.text(os, { size: 9.5, color: MUTE, gap: 1 });
     if (e.why) d.text(e.why, { size: 9.5, gap: 6 });
   });
 
+  // 10. Debate summary / transcript
   d.newPage();
-  d.text('FULL TRANSCRIPT', { size: 9, bold: true, color: [0.91, 0.4, 0.29], gap: 6 });
+  h('DEBATE TRANSCRIPT');
   evs.forEach((e) => {
-    if (e.type === 'round') {
-      d.space(4);
-      d.text(`Round ${e.n}: ${e.title || ''}`, { bold: true, size: 12, gap: 4 });
-    } else if (e.type === 'message') {
-      d.text(seatName(e.seat), { bold: true, size: 10, gap: 1 });
-      d.text(e.text, { size: 10, gap: 6, indent: 8 });
-    }
+    if (e.type === 'round') { d.space(4); d.text(`Round ${e.n}: ${e.title || ''}`, { bold: true, size: 12, gap: 4 }); }
+    else if (e.type === 'message') { d.text(seatName(e.seat), { bold: true, size: 10, gap: 1 }); d.text(e.text, { size: 10, gap: 6, indent: 8 }); }
   });
+
+  // 11. Sources
+  const srcs = (research && research.claims ? research.claims : []).filter((c) => c.source || c.url);
+  d.rule();
+  h('SOURCE REFERENCES');
+  if (srcs.length) srcs.forEach((c, i) => d.text(`${i + 1}. ${c.source || 'Source'}${c.url ? ' - ' + c.url : ''}${c.date ? ' (' + c.date + ')' : ''}`, { size: 9, indent: 6, gap: 2 }));
+  else d.text('No external sources were cited.', { color: MUTE, size: 9 });
+  d.text('This report is general AI-assisted analysis, not financial, investment or qualified legal advice. Verify material facts independently.', { size: 8.5, color: MUTE });
   return d.build();
 }
 
