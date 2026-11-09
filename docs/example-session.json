@@ -1,0 +1,113 @@
+[
+  {
+    "session": "demo-pricing",
+    "type": "start",
+    "decision": "I run a coaching business at $30k a month with 15 clients at $2,000 each. Should I raise to $3,500 for everyone, raise for new clients only, or keep $2,000?",
+    "options": [
+      "Raise all to $3,500",
+      "Raise new clients only",
+      "Keep $2,000"
+    ],
+    "seats": [
+      "allocator",
+      "architect",
+      "growth",
+      "operator",
+      "contrarian",
+      "advocate",
+      "strategist"
+    ],
+    "ts": 1794250232941
+  },
+  {
+    "session": "demo-pricing",
+    "type": "round",
+    "n": 1,
+    "title": "Opening positions",
+    "ts": 1794250232950
+  },
+  {
+    "session": "demo-pricing",
+    "type": "message",
+    "seat": "allocator",
+    "round": 1,
+    "text": "Cash first. Raising all 15 clients to $3,500 lifts revenue to $52,500 if nobody leaves. Losing 5 clients puts you at $35,000, still above today. The downside is survivable, but a blanket rise bets your whole base on one assumption.",
+    "ts": 1794250232956
+  },
+  {
+    "session": "demo-pricing",
+    "type": "message",
+    "seat": "architect",
+    "round": 1,
+    "text": "At $2,000 you are underpriced if you have a waitlist or fast results. Raise, but attach a better offer: a guarantee or a premium tier, so the rise reads as upgrade, not tax.",
+    "ts": 1794250232963
+  },
+  {
+    "session": "demo-pricing",
+    "type": "message",
+    "seat": "contrarian",
+    "round": 1,
+    "text": "You said you lean toward raising because you feel underpaid. That is a feeling, not evidence. What do your last five sales calls say about price resistance?",
+    "ts": 1794250232970
+  },
+  {
+    "session": "demo-pricing",
+    "type": "scores",
+    "seat": "allocator",
+    "weight": 4,
+    "scores": {
+      "Raise all to $3,500": 6,
+      "Raise new clients only": 8,
+      "Keep $2,000": 5
+    },
+    "ruin": false,
+    "why": "Staged rise limits downside while testing demand.",
+    "ts": 1794250232976
+  },
+  {
+    "session": "demo-pricing",
+    "type": "scores",
+    "seat": "architect",
+    "weight": 5,
+    "scores": {
+      "Raise all to $3,500": 8,
+      "Raise new clients only": 8,
+      "Keep $2,000": 3
+    },
+    "ruin": false,
+    "why": "Underpriced; either rise beats staying put.",
+    "ts": 1794250232982
+  },
+  {
+    "session": "demo-pricing",
+    "type": "scores",
+    "seat": "advocate",
+    "weight": 4,
+    "scores": {
+      "Raise all to $3,500": 4,
+      "Raise new clients only": 8,
+      "Keep $2,000": 6
+    },
+    "ruin": false,
+    "why": "A surprise 75% rise damages trust with loyal clients.",
+    "ts": 1794250232988
+  },
+  {
+    "session": "demo-pricing",
+    "type": "verdict",
+    "winner": "Raise new clients only",
+    "confidence": 74,
+    "summary": "Test the $3,500 price on new clients first and grandfather the existing 15 for a defined period. You learn real price resistance without risking the base.",
+    "risks": [
+      "New-client close rate may drop at $3,500",
+      "Existing clients may notice and ask for the new rate",
+      "You may be tempted to rise for everyone before you have data"
+    ],
+    "next_steps": [
+      "Publish the $3,500 offer to new leads this week",
+      "Track close rate on the next 10 calls",
+      "Decide on a migration plan for existing clients at day 60"
+    ],
+    "ts": 1794250232994
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "board": "ask",
+  "default": ["allocator", "architect", "growth", "operator", "contrarian", "advocate", "strategist"],
+  "quick": ["allocator", "architect", "operator", "contrarian"],
+  "seats": [
+    { "id": "allocator",  "name": "The Capital Allocator", "pillar": "Money and ruin risk",      "color": "#e8b04a", "agent": "allocator" },
+    { "id": "architect",  "name": "The Offer Architect",   "pillar": "Pricing and offer design", "color": "#e8674a", "agent": "architect" },
+    { "id": "growth",     "name": "The Growth Hacker",     "pillar": "Distribution and demand",  "color": "#4ac0e8", "agent": "growth" },
+    { "id": "operator",   "name": "The Operator",          "pillar": "Execution and capacity",   "color": "#7be84a", "agent": "operator" },
+    { "id": "contrarian", "name": "The Contrarian",        "pillar": "What could be wrong",      "color": "#b04ae8", "agent": "contrarian" },
+    { "id": "advocate",   "name": "The Customer Advocate", "pillar": "Customers and retention",  "color": "#e84a9a", "agent": "advocate" },
+    { "id": "strategist", "name": "The Long-Game Strategist", "pillar": "Brand and long-term position", "color": "#4ae8b0", "agent": "strategist" }
+  ]
+}

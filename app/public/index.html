@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Roast Room</title>
+<style>
+  :root { --bg:#0e0f13; --panel:#171922; --line:#262a38; --ink:#e9eaf0; --mute:#8b90a3; --hot:#e8674a; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
+  header { display:flex; align-items:center; gap:16px; padding:14px 22px; border-bottom:1px solid var(--line); flex-wrap:wrap; }
+  h1 { font-size:18px; margin:0; letter-spacing:.14em; text-transform:uppercase; }
+  h1 span { color:var(--hot); }
+  select { background:var(--panel); color:var(--ink); border:1px solid var(--line); padding:7px 10px; border-radius:8px; max-width:46ch; }
+  .spacer { flex:1; }
+  .live { font-size:12px; color:var(--mute); display:flex; align-items:center; gap:6px; }
+  .dot { width:8px; height:8px; border-radius:50%; background:#555; } .dot.on { background:#4ae87b; box-shadow:0 0 8px #4ae87b; }
+  .btn { background:var(--hot); color:#fff; border:0; padding:8px 14px; border-radius:8px; font-weight:600; cursor:pointer; text-decoration:none; font-size:14px; }
+  .btn[aria-disabled=true] { opacity:.35; pointer-events:none; }
+  main { display:grid; grid-template-columns: 300px 1fr 320px; gap:18px; padding:18px 22px; max-width:1500px; margin:0 auto; }
+  @media (max-width:1100px){ main{ grid-template-columns:1fr; } }
+  .panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:16px; }
+  .panel h2 { margin:0 0 12px; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--mute); }
+  .decision { font-size:17px; margin:0 0 8px; }
+  .opts { display:flex; flex-wrap:wrap; gap:6px; }
+  .chip { border:1px solid var(--line); padding:3px 10px; border-radius:99px; font-size:12px; color:var(--mute); }
+  .seat { display:flex; gap:10px; align-items:center; padding:8px 0; border-bottom:1px solid var(--line); }
+  .seat:last-child { border:0; }
+  .avatar { width:34px; height:34px; border-radius:50%; display:grid; place-items:center; font-weight:700; color:#0e0f13; flex:none; transition:transform .2s, box-shadow .2s; }
+  .seat.talking .avatar { transform:scale(1.18); box-shadow:0 0 0 3px #ffffff30, 0 0 14px currentColor; }
+  .seat small { display:block; color:var(--mute); font-size:12px; }
+  .seat.out { opacity:.35; }
+  .round { text-align:center; margin:18px 0 10px; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--hot); }
+  .msg { display:flex; gap:10px; margin:10px 0; animation:in .35s ease; }
+  @keyframes in { from { opacity:0; transform:translateY(6px);} to { opacity:1; transform:none; } }
+  .bubble { background:#1d2030; border:1px solid var(--line); border-left:3px solid var(--c,#888); border-radius:10px; padding:10px 12px; flex:1; }
+  .bubble b { color:var(--c,#fff); font-size:13px; display:block; margin-bottom:2px; }
+  .empty { color:var(--mute); text-align:center; padding:60px 10px; }
+  .row { margin:10px 0; } .row .top { display:flex; justify-content:space-between; font-size:13px; margin-bottom:4px; }
+  .track { background:#232738; height:10px; border-radius:6px; overflow:hidden; } .fill { height:100%; background:var(--hot); transition:width .6s; }
+  .row.win .fill { background:#4ae87b; }
+  .verdict { margin-top:14px; padding-top:14px; border-top:1px solid var(--line); }
+  .verdict h3 { margin:0 0 4px; font-size:20px; } .conf { color:var(--mute); font-size:13px; margin-bottom:8px; }
+  ul { padding-left:18px; margin:6px 0; } li { margin:3px 0; font-size:14px; }
+  .ruin { color:#ff7b7b; font-size:12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>The Roast <span>Room</span></h1>
+  <select id="sessionPick" aria-label="Session"></select>
+  <div class="spacer"></div>
+  <div class="live"><span class="dot" id="dot"></span><span id="liveTxt">connecting</span></div>
+  <a id="pdf" class="btn" aria-disabled="true" href="#" target="_blank">Download PDF</a>
+</header>
+<main>
+  <section class="panel"><h2>The decision</h2><div id="decision" class="empty">Waiting for a roast.<br>In Claude Code, type <code>/roast-room</code> and your decision.</div><div id="opts" class="opts"></div><h2 style="margin-top:18px">The council</h2><div id="seats"></div></section>
+  <section class="panel"><h2>The floor</h2><div id="feed"><div class="empty">The room is quiet.</div></div></section>
+  <section class="panel"><h2>Scoreboard</h2><div id="board"><div class="empty">No scores yet.</div></div><div id="verdict"></div></section>
+</main>
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let roster = [], current = null, state = null;
+
+const fresh = () => ({ start:null, messages:[], scores:[], verdict:null, round:null });
+state = fresh();
+
+function seatInfo(id){ return roster.find(s => s.id === id) || { id, name:id, color:'#888', pillar:'' }; }
+function initials(n){ return n.replace(/^The /,'').split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase(); }
+
+function render(){
+  const st = state.start;
+  if (st){
+    $('decision').className = 'decision'; $('decision').textContent = st.decision;
+    $('opts').innerHTML = (st.options||[]).map(o=>`<span class="chip">${esc(o)}</span>`).join('');
+  }
+  const seated = st && st.seats && st.seats.length ? st.seats : roster.map(s=>s.id);
+  const talking = state.messages.length ? state.messages[state.messages.length-1].seat : null;
+  $('seats').innerHTML = roster.map(s => `<div class="seat ${seated.includes(s.id)?'':'out'} ${talking===s.id?'talking':''}" style="color:${s.color}">
+    <div class="avatar" style="background:${s.color}">${esc(initials(s.name))}</div>
+    <div style="color:var(--ink)">${esc(s.name)}<small>${esc(s.pillar)}</small></div></div>`).join('');
+
+  let html = '', lastRound = null;
+  for (const e of state.timeline || []) {
+    if (e.type === 'round') html += `<div class="round">Round ${esc(e.n)}${e.title?': '+esc(e.title):''}</div>`;
+    else if (e.type === 'message'){ const s = seatInfo(e.seat);
+      html += `<div class="msg"><div class="avatar" style="background:${s.color}">${esc(initials(s.name))}</div><div class="bubble" style="--c:${s.color}"><b>${esc(s.name)}</b>${esc(e.text)}</div></div>`; }
+  }
+  $('feed').innerHTML = html || '<div class="empty">The room is quiet.</div>';
+
+  const opts = (st && st.options) || [];
+  let ranking = state.verdict && state.verdict.ranking && state.verdict.ranking.length ? state.verdict.ranking : liveRanking(opts);
+  $('board').innerHTML = ranking.length ? ranking.map((r,i)=>`<div class="row ${state.verdict&&i===0?'win':''}"><div class="top"><span>${esc(r.option)}${r.capped?' <span class="ruin">capped: ruin risk</span>':''}</span><b>${r.score.toFixed(1)}</b></div><div class="track"><div class="fill" style="width:${r.score*10}%"></div></div></div>`).join('') : '<div class="empty">No scores yet.</div>';
+
+  const v = state.verdict;
+  $('verdict').innerHTML = v ? `<div class="verdict"><h3>${esc(v.winner)}</h3><div class="conf">Confidence ${esc(v.confidence)}%</div><p>${esc(v.summary||'')}</p>
+    ${v.risks&&v.risks.length?'<b>Risks</b><ul>'+v.risks.map(x=>`<li>${esc(x)}</li>`).join('')+'</ul>':''}
+    ${v.next_steps&&v.next_steps.length?'<b>Next steps</b><ul>'+v.next_steps.map(x=>`<li>${esc(x)}</li>`).join('')+'</ul>':''}</div>` : '';
+
+  const pdf = $('pdf');
+  if (current && (state.verdict || state.scores.length)){ pdf.href = `/report/${encodeURIComponent(current)}.pdf`; pdf.removeAttribute('aria-disabled'); }
+  else { pdf.setAttribute('aria-disabled','true'); pdf.href = '#'; }
+}
+
+// Client-side mirror of app/scoring.js
+function liveRanking(options){
+  return options.map(option=>{
+    let num=0, den=0, ruin=false;
+    for (const ev of state.scores){ const s = ev.scores && ev.scores[option]; if (typeof s!=='number') continue;
+      const w = Number(ev.weight)||1; num+=w*s; den+=w; if (ev.ruin===true || (Array.isArray(ev.ruin)&&ev.ruin.includes(option))) ruin=true; }
+    let score = den? num/den : 0, capped=false; if (ruin && score>4){ score=4; capped=true; }
+    return { option, score: Math.round(score*10)/10, capped };
+  }).sort((a,b)=>b.score-a.score);
+}
+
+function apply(e){
+  state.timeline = state.timeline || [];
+  if (e.type==='start'){ state = fresh(); state.timeline=[]; state.start=e; }
+  else if (e.type==='round' || e.type==='message'){ state.timeline.push(e); if(e.type==='message') state.messages.push(e); }
+  else if (e.type==='scores') state.scores.push(e);
+  else if (e.type==='verdict') state.verdict = e;
+}
+
+async function pick(id){
+  current = id; state = fresh(); state.timeline=[];
+  if (id){ const s = await (await fetch('/api/sessions/'+encodeURIComponent(id))).json(); (s.events||[]).forEach(apply); }
+  render();
+}
+async function loadList(selectLatest){
+  const list = await (await fetch('/api/sessions')).json();
+  $('sessionPick').innerHTML = list.length ? list.map(s=>`<option value="${esc(s.id)}">${esc((s.decision||s.id).slice(0,70))}${s.done?'':' (live)'}</option>`).join('') : '<option>No sessions yet</option>';
+  if (list.length && (selectLatest || !current)){ $('sessionPick').value = list[0].id; await pick(list[0].id); }
+}
+$('sessionPick').onchange = (e) => pick(e.target.value);
+
+(async function init(){
+  roster = await (await fetch('/api/roster')).json();
+  await loadList(true); render();
+  const es = new EventSource('/api/stream');
+  es.onopen = () => { $('dot').classList.add('on'); $('liveTxt').textContent = 'live'; };
+  es.onerror = () => { $('dot').classList.remove('on'); $('liveTxt').textContent = 'reconnecting'; };
+  es.onmessage = async (m) => {
+    const e = JSON.parse(m.data);
+    if (e.type === 'start'){ await loadList(false); $('sessionPick').value = e.session; current = e.session; state = fresh(); state.timeline=[]; }
+    if (e.session === current){ apply(e); render(); }
+  };
+})();
+</script>
+</body>
+</html>
