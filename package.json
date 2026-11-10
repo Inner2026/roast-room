@@ -5,8 +5,11 @@
   "private": true,
   "scripts": {
     "start": "node app/server.js",
-    "test": "node app/test.js"
+    "web": "node --no-warnings app/web.js",
+    "test": "node app/test.js && node --no-warnings app/test_web.js && node --no-warnings app/test_llm.js"
   },
-  "engines": { "node": ">=18" },
+  "engines": {
+    "node": ">=22.5"
+  },
   "license": "MIT"
 }

@@ -3,3 +3,5 @@ sessions/*
 !sessions/.gitkeep
 .DS_Store
 *.log
+.env
+data/

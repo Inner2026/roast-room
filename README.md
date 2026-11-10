@@ -109,3 +109,7 @@ PORT=5000 npm start
 ## License
 
 MIT
+
+## Website mode
+
+Besides the Claude Code skill, the repo runs as a hosted website with accounts, saved history, live debate and PDF: see `docs/DEPLOY.md`. Local demo without spending: `LLM_PROVIDER=mock npm run web`. Tests: `npm test`.

@@ -1,0 +1,15 @@
+{
+  "_note": "Model IDs verified against Anthropic's models overview. Override per environment with MODEL_SEATS / MODEL_CHAIR / MODEL_RESEARCH.",
+  "seats": "claude-sonnet-5-5",
+  "research": "claude-sonnet-5-5",
+  "fallback": "claude-haiku-5-5",
+  "webSearchTool": "web_search_20250305",
+  "webSearchMaxUses": 5,
+  "maxTokens": { "seat": 700, "scores": 500, "research": 3000, "objection": 700 },
+  "pricingUsdPerMTok": {
+    "claude-sonnet-5-5": { "in": 2, "out": 10 },
+    "claude-haiku-5-5": { "in": 0.1, "out": 0.5 },
+    "claude-opus-5-5": { "in": 4, "out": 20 }
+  },
+  "webSearchUsdPer1000": 10
+}

@@ -1,0 +1,7 @@
+{
+  "_note": "No prices here on purpose. Limits only. Edit freely; 'free' applies to every new account.",
+  "free": { "runsPerDay": 2, "runsPerMonth": 10, "maxDecisionChars": 4000 },
+  "pro":  { "runsPerDay": 20, "runsPerMonth": 300, "maxDecisionChars": 8000 },
+  "globalDailyRunCap": 200,
+  "globalDailyBudgetUsd": 25
+}

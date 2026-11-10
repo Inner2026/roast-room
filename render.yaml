@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: executive-room
+    runtime: docker
+    plan: starter
+    healthCheckPath: /healthz
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: ALLOWED_EMAILS
+        sync: false
+      - key: GLOBAL_DAILY_BUDGET_USD
+        value: "10"
