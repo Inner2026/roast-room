@@ -5,7 +5,7 @@ Bring a hard business decision and a council of seven AI advisors argues it out,
 Built for [Claude Code](https://claude.com/claude-code). Claude is the **Chair**: it frames your decision, runs three rounds, keeps score, and writes the verdict. The web room is optional and only watches.
 
 ```bash
-git clone https://github.com/<your-username>/roast-room.git
+git clone https://github.com/Inner2026/roast-room.git
 cd roast-room
 ```
 
